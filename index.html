@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Age I Fidelity Client</title><link rel="stylesheet" href="/assets/game.css"></head><body>
+<div id="app" class="shell">
+<div class="age-frame-top" aria-hidden="true"></div>
+<header class="topbar">
+  <div class="server-strip"><span>Age I Realm</span><span id="serverClock">Server time —</span></div>
+  <div class="identity"><div class="crest">I</div><div><strong id="cityName">Loading…</strong><span id="coords">—</span></div></div>
+  <div id="resources" class="resources"></div>
+  <div class="player-stats"><span>Gold <b id="gold">—</b></span><span>Pop <b id="population">—</b></span><span>Prestige <b id="prestige">—</b></span><span id="beginnerProtection" title="Beginner Protection status">BP —</span></div>
+  <select id="citySelect" aria-label="Current city"></select>
+</header>
+<nav class="view-tabs" aria-label="Primary game views"><button data-view="city" class="active"><span>Town</span><small>Buildings</small></button><button data-view="fields" aria-label="City Exterior / Fields"><span>City</span><small>Resource Fields</small></button><button data-view="map"><span>Map</span><small>World</small></button></nav>
+<div class="play-layout"><aside class="city-rail"><h2>Cities</h2><div id="cityRail"></div><div class="rail-help">Select a city to make it the active Town / City / Map context.</div></aside><main>
+  <section id="cityView" class="game-view"><div class="view-heading"><div><h1>City</h1><p>Interior building plots. Building-specific functions open from their building when implemented.</p></div><span class="status-pill">Authoritative state</span></div><div id="cityPlots" class="plot-grid"></div></section>
+  <section id="fieldsView" class="game-view hidden"><div class="view-heading"><div><h1>City Exterior</h1><p>Resource field plots attached to the current city.</p></div><span class="status-pill">Authoritative state</span></div><div id="fieldPlots" class="field-grid"></div></section>
+  <section id="mapView" class="game-view hidden"><div class="view-heading"><div><h1>World Map</h1><p id="mapCenter">Current coordinate: (0, 0)</p></div><span class="status-pill">Persistent 800×800 world</span></div>
+<div class="map-controls"><button id="mapHome" class="action-btn">Home</button><button id="mapUp" class="action-btn">↑</button><button id="mapLeft" class="action-btn">←</button><button id="mapRight" class="action-btn">→</button><button id="mapDown" class="action-btn">↓</button><label>X <input id="mapX" type="number" min="0" max="799"></label><label>Y <input id="mapY" type="number" min="0" max="799"></label><button id="mapGo" class="action-btn">Go</button><input id="bookmarkLabel" maxlength="64" placeholder="Bookmark label"><button id="mapBookmark" class="action-btn">Bookmark coordinate</button></div>
+<div class="map-shell"><div id="mapGrid" class="map-grid"></div></div><div class="map-legend"><span>◆ Player city</span><span>▣ NPC city</span><span>▲ Valley</span><span>◇ Flat</span></div><div class="function-box"><h3>Bookmarks</h3><div id="mapBookmarks"></div></div></section>
+</main>
+<aside class="right-rail"><section><h2>City Overview</h2><div id="rightCitySummary"></div></section><section><h2>Quick Access</h2><div class="quick-grid"><button id="reportsButton" class="action-btn">Reports</button><button id="mailButton" class="action-btn">Mail</button><button id="allianceButton" class="action-btn">Alliance</button><button id="questButton" class="action-btn">Quests</button><button id="progressionButton" class="action-btn">Rank / Title</button><button id="itemsButton" class="action-btn">My Items</button></div></section><section><h2>Bookmarks</h2><div id="railBookmarks" class="rail-bookmarks">Open Map to manage bookmarks.</div></section></aside></div>
+<aside class="activity"><div><h2>City Status</h2><div id="civicStatus" class="status-row"></div></div><div><h2>Active Operations</h2><div id="activityRows" class="activity-rows"></div><button id="chatButton" class="action-btn chat-launch">Chat</button><button id="economyDebugButton" class="action-btn hidden">Economy Debug</button></div></aside>
+<div id="buildingModal" class="modal hidden" role="dialog" aria-modal="true"><div class="modal-card"><button id="modalClose" class="modal-close">×</button><div id="modalBody"></div></div></div>
+<div id="notice" class="notice hidden" role="status"></div>
+</div><script src="/assets/game.js"></script></body></html>

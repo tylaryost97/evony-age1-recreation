@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "items": {
+    "beginner_guidelines": {
+      "name": "Beginner Guidelines",
+      "category": "SPEEDUP",
+      "effect": {
+        "type": "queue_reduce_seconds",
+        "seconds": 900
+      },
+      "targets": [
+        "construction",
+        "research"
+      ]
+    },
+    "primary_guidelines": {
+      "name": "Primary Guidelines",
+      "category": "SPEEDUP",
+      "effect": {
+        "type": "queue_reduce_seconds",
+        "seconds": 3600
+      },
+      "targets": [
+        "construction",
+        "research"
+      ]
+    },
+    "intermediate_guidelines": {
+      "name": "Intermediate Guidelines",
+      "category": "SPEEDUP",
+      "effect": {
+        "type": "queue_reduce_seconds",
+        "seconds": 9000
+      },
+      "targets": [
+        "construction"
+      ]
+    },
+    "senior_guidelines": {
+      "name": "Senior Guidelines",
+      "category": "SPEEDUP",
+      "effect": {
+        "type": "queue_reduce_seconds",
+        "seconds": 28800
+      },
+      "targets": [
+        "construction",
+        "research"
+      ]
+    },
+    "ultimate_guidelines": {
+      "name": "Ultimate Guidelines",
+      "category": "SPEEDUP",
+      "effect": {
+        "type": "queue_reduce_percent",
+        "percent": 30
+      },
+      "targets": [
+        "construction",
+        "research"
+      ]
+    },
+    "napoleons_diary": {
+      "name": "Napoleon's Diary",
+      "category": "SPEEDUP",
+      "effect": {
+        "type": "queue_reduce_percent",
+        "percent": 30
+      },
+      "targets": [
+        "training"
+      ],
+      "once_per_target": true
+    },
+    "archimedes_note": {
+      "name": "Archimedes' Note",
+      "category": "SPEEDUP",
+      "effect": {
+        "type": "queue_reduce_percent",
+        "percent": 30
+      },
+      "targets": [
+        "fortification"
+      ],
+      "once_per_target": true
+    },
+    "plowshares": {
+      "name": "Plowshares",
+      "category": "PRODUCTION",
+      "effect": {
+        "type": "production",
+        "resource": "food",
+        "percent": 25,
+        "duration_seconds": 86400
+      },
+      "stack_group": "production:food"
+    },
+    "iron_rake": {
+      "name": "Iron Rake",
+      "category": "PRODUCTION",
+      "effect": {
+        "type": "production",
+        "resource": "food",
+        "percent": 25,
+        "duration_seconds": 604800
+      },
+      "stack_group": "production:food"
+    },
+    "arch_saw": {
+      "name": "Arch Saw",
+      "category": "PRODUCTION",
+      "effect": {
+        "type": "production",
+        "resource": "lumber",
+        "percent": 25,
+        "duration_seconds": 86400
+      },
+      "stack_group": "production:lumber"
+    },
+    "double_saw": {
+      "name": "Double Saw",
+      "category": "PRODUCTION",
+      "effect": {
+        "type": "production",
+        "resource": "lumber",
+        "percent": 25,
+        "duration_seconds": 604800
+      },
+      "stack_group": "production:lumber"
+    },
+    "quarrying_tools": {
+      "name": "Quarrying Tools",
+      "category": "PRODUCTION",
+      "effect": {
+        "type": "production",
+        "resource": "stone",
+        "percent": 25,
+        "duration_seconds": 86400
+      },
+      "stack_group": "production:stone"
+    },
+    "adv_quarrying_tools": {
+      "name": "Adv Quarrying Tools",
+      "category": "PRODUCTION",
+      "effect": {
+        "type": "production",
+        "resource": "stone",
+        "percent": 25,
+        "duration_seconds": 604800
+      },
+      "stack_group": "production:stone"
+    },
+    "blower": {
+      "name": "Blower",
+      "category": "PRODUCTION",
+      "effect": {
+        "type": "production",
+        "resource": "iron",
+        "percent": 25,
+        "duration_seconds": 86400
+      },
+      "stack_group": "production:iron"
+    },
+    "blast_furnace": {
+      "name": "Blast Furnace",
+      "category": "PRODUCTION",
+      "effect": {
+        "type": "production",
+        "resource": "iron",
+        "percent": 25,
+        "duration_seconds": 604800
+      },
+      "stack_group": "production:iron"
+    },
+    "michelangelos_script": {
+      "name": "Michelangelo's Script",
+      "category": "REQUIREMENT",
+      "effect": {
+        "type": "construction_requirement"
+      },
+      "usable_directly": false
+    },
+    "the_lost_armor_script": {
+      "name": "The Lost Armor Script",
+      "category": "REQUIREMENT",
+      "effect": {
+        "type": "research_requirement"
+      },
+      "usable_directly": false,
+      "implemented": false,
+      "historical_effect": "Enhancement research requirement; exact target research integration not yet verified"
+    },
+    "anabasis": {
+      "name": "Anabasis",
+      "category": "HERO",
+      "effect": {
+        "type": "hero_xp",
+        "amount": 1000
+      },
+      "targets": [
+        "hero"
+      ]
+    },
+    "epitome_of_military_science": {
+      "name": "Epitome of Military Science",
+      "category": "HERO",
+      "effect": {
+        "type": "hero_xp",
+        "amount": 10000
+      },
+      "targets": [
+        "hero"
+      ]
+    },
+    "on_war": {
+      "name": "On War",
+      "category": "HERO",
+      "effect": {
+        "type": "hero_xp",
+        "amount": 100000
+      },
+      "targets": [
+        "hero"
+      ]
+    },
+    "the_art_of_war": {
+      "name": "The Art of War",
+      "category": "HERO",
+      "effect": {
+        "type": "hero_attribute_buff",
+        "attribute": "intelligence",
+        "multiplier": 1.25,
+        "duration_seconds": 604800
+      },
+      "targets": [
+        "hero"
+      ],
+      "stack_group": "hero:intelligence"
+    },
+    "wealth_of_nations": {
+      "name": "The Wealth of Nations",
+      "category": "HERO",
+      "effect": {
+        "type": "hero_attribute_buff",
+        "attribute": "politics",
+        "multiplier": 1.25,
+        "duration_seconds": 604800
+      },
+      "targets": [
+        "hero"
+      ],
+      "stack_group": "hero:politics"
+    },
+    "excalibur": {
+      "name": "Excalibur",
+      "category": "HERO",
+      "effect": {
+        "type": "hero_attribute_buff",
+        "attribute": "attack",
+        "multiplier": 1.25,
+        "duration_seconds": 604800
+      },
+      "targets": [
+        "hero"
+      ],
+      "stack_group": "hero:attack"
+    },
+    "holy_water": {
+      "name": "Holy Water",
+      "category": "HERO",
+      "effect": {
+        "type": "hero_redistribute"
+      },
+      "targets": [
+        "hero"
+      ]
+    },
+    "hero_hunting": {
+      "name": "Hero Hunting",
+      "category": "HERO",
+      "effect": {
+        "type": "inn_refresh"
+      },
+      "targets": [
+        "city"
+      ],
+      "implemented": false,
+      "usable_directly": false,
+      "historical_effect": "Inn roster refresh; exact candidate generator HISTORICAL_VALUE_UNKNOWN"
+    },
+    "city_teleporter": {
+      "name": "City Teleporter",
+      "category": "TELEPORT",
+      "effect": {
+        "type": "random_teleport"
+      },
+      "targets": [
+        "city"
+      ]
+    },
+    "adv_city_teleporter": {
+      "name": "Adv City Teleporter",
+      "category": "TELEPORT",
+      "effect": {
+        "type": "specific_teleport"
+      },
+      "targets": [
+        "city"
+      ]
+    },
+    "civil_code": {
+      "name": "Civil Code",
+      "category": "CITY",
+      "effect": {
+        "type": "population_add",
+        "percent_limit": 20,
+        "minimum": 100
+      },
+      "targets": [
+        "city"
+      ]
+    },
+    "speech_text": {
+      "name": "Speech Text",
+      "category": "CITY",
+      "effect": {
+        "type": "loyalty_grievance",
+        "loyalty": 100,
+        "grievance": 0
+      },
+      "targets": [
+        "city"
+      ]
+    },
+    "war_ensign": {
+      "name": "War Ensign",
+      "category": "MILITARY",
+      "effect": {
+        "type": "march_limit_percent",
+        "percent": 25
+      },
+      "usable_directly": false
+    },
+    "dynamite": {
+      "name": "Dynamite",
+      "category": "CONSTRUCTION",
+      "effect": {
+        "type": "instant_demolition_no_refund"
+      },
+      "targets": [
+        "building"
+      ]
+    },
+    "cross_medal": {
+      "name": "Cross Medal",
+      "category": "MEDAL",
+      "effect": {
+        "type": "promotion_material"
+      },
+      "usable_directly": false
+    },
+    "rose_medal": {
+      "name": "Rose Medal",
+      "category": "MEDAL",
+      "effect": {
+        "type": "promotion_material"
+      },
+      "usable_directly": false
+    },
+    "lion_medal": {
+      "name": "Lion Medal",
+      "category": "MEDAL",
+      "effect": {
+        "type": "promotion_material"
+      },
+      "usable_directly": false
+    },
+    "honor_medal": {
+      "name": "Honor Medal",
+      "category": "MEDAL",
+      "effect": {
+        "type": "promotion_material"
+      },
+      "usable_directly": false
+    },
+    "courage_medal": {
+      "name": "Courage Medal",
+      "category": "MEDAL",
+      "effect": {
+        "type": "promotion_material"
+      },
+      "usable_directly": false
+    },
+    "wisdom_medal": {
+      "name": "Wisdom Medal",
+      "category": "MEDAL",
+      "effect": {
+        "type": "promotion_material"
+      },
+      "usable_directly": false
+    },
+    "freedom_medal": {
+      "name": "Freedom Medal",
+      "category": "MEDAL",
+      "effect": {
+        "type": "promotion_material"
+      },
+      "usable_directly": false
+    },
+    "justice_medal": {
+      "name": "Justice Medal",
+      "category": "MEDAL",
+      "effect": {
+        "type": "promotion_material"
+      },
+      "usable_directly": false
+    },
+    "nation_medal": {
+      "name": "Nation Medal",
+      "category": "MEDAL",
+      "effect": {
+        "type": "promotion_material"
+      },
+      "usable_directly": false
+    },
+    "aries_amulet": {
+      "name": "Aries Amulet",
+      "category": "AMULET",
+      "effect": {
+        "type": "reward_item"
+      },
+      "usable_directly": false,
+      "implemented": false,
+      "historical_effect": "Wheel of Fortune random prize; exact 24-slot prize generation/selection distribution HISTORICAL_VALUE_UNKNOWN"
+    }
+  }
+}

@@ -1,0 +1,492 @@
+{
+  "schema_version": 1,
+  "quests": [
+    {
+      "key": "cottage_1",
+      "category": "REBUILD",
+      "name": "Cottage Building",
+      "requirements": [
+        {
+          "type": "building_level",
+          "building": "cottage",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 200,
+          "lumber": 1000,
+          "stone": 200,
+          "iron": 200
+        },
+        "population": 30,
+        "items": {
+          "beginner_guidelines": 1,
+          "aries_amulet": 1
+        }
+      },
+      "source_note": "Routine Quest/Cottage Building"
+    },
+    {
+      "key": "cottage_2",
+      "category": "REBUILD",
+      "name": "Upgrade Cottage",
+      "requires_quests": [
+        "cottage_1"
+      ],
+      "requirements": [
+        {
+          "type": "building_level",
+          "building": "cottage",
+          "level": 2
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 500,
+          "lumber": 2000,
+          "stone": 500,
+          "iron": 500
+        },
+        "population": 50
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "population_1000",
+      "category": "REBUILD",
+      "name": "Growing Population I",
+      "requirements": [
+        {
+          "type": "population_limit",
+          "amount": 1000
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 1000,
+          "lumber": 4000,
+          "stone": 1000,
+          "iron": 1000
+        },
+        "population": 100
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "population_10000",
+      "category": "REBUILD",
+      "name": "Growing Population II",
+      "requirements": [
+        {
+          "type": "population_limit",
+          "amount": 10000
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 5000,
+          "lumber": 10000,
+          "stone": 5000,
+          "iron": 5000
+        },
+        "population": 500
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "academy_1",
+      "category": "SCIENCE",
+      "name": "Establish Academy",
+      "requirements": [
+        {
+          "type": "building_level",
+          "building": "academy",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 150,
+          "lumber": 2500,
+          "stone": 1500,
+          "iron": 200
+        },
+        "items": {
+          "primary_guidelines": 1
+        }
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "academy_2",
+      "category": "SCIENCE",
+      "name": "Improve Academy II",
+      "requirements": [
+        {
+          "type": "building_level",
+          "building": "academy",
+          "level": 2
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 300,
+          "lumber": 5000,
+          "stone": 3000,
+          "iron": 400
+        }
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "academy_3",
+      "category": "SCIENCE",
+      "name": "Improve Academy III",
+      "requirements": [
+        {
+          "type": "building_level",
+          "building": "academy",
+          "level": 3
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 1000,
+          "lumber": 10000,
+          "stone": 5000,
+          "iron": 1000
+        }
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "agriculture_1",
+      "category": "SCIENCE",
+      "name": "Research Agriculture",
+      "requirements": [
+        {
+          "type": "technology_level",
+          "technology": "agriculture",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "gold": 2000
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "lumbering_1",
+      "category": "SCIENCE",
+      "name": "Research Lumbering",
+      "requirements": [
+        {
+          "type": "technology_level",
+          "technology": "lumbering",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "gold": 2400
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "masonry_1",
+      "category": "SCIENCE",
+      "name": "Research Masonry",
+      "requirements": [
+        {
+          "type": "technology_level",
+          "technology": "masonry",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "gold": 3000
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "mining_1",
+      "category": "SCIENCE",
+      "name": "Research Mining",
+      "requirements": [
+        {
+          "type": "technology_level",
+          "technology": "mining",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "gold": 4000
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "informatics_1",
+      "category": "SCIENCE",
+      "name": "Research Informatics",
+      "requirements": [
+        {
+          "type": "technology_level",
+          "technology": "informatics",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "gold": 4000
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "military_science_1",
+      "category": "SCIENCE",
+      "name": "Research Military Science",
+      "requirements": [
+        {
+          "type": "technology_level",
+          "technology": "military_science",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "gold": 5000
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "military_tradition_1",
+      "category": "SCIENCE",
+      "name": "Research Military Tradition",
+      "requirements": [
+        {
+          "type": "technology_level",
+          "technology": "military_tradition",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "gold": 6000
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "rally_1",
+      "category": "MILITARY",
+      "name": "Establish Rally Spot",
+      "requirements": [
+        {
+          "type": "building_level",
+          "building": "rally_spot",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 500,
+          "lumber": 1000,
+          "stone": 2000,
+          "iron": 500
+        }
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "barracks_1",
+      "category": "MILITARY",
+      "name": "Establish Barracks",
+      "requirements": [
+        {
+          "type": "building_level",
+          "building": "barracks",
+          "level": 1
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 1000,
+          "lumber": 1200,
+          "stone": 1500,
+          "iron": 1000
+        }
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "barracks_2",
+      "category": "MILITARY",
+      "name": "Improve Barracks",
+      "requirements": [
+        {
+          "type": "building_level",
+          "building": "barracks",
+          "level": 2
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 2000,
+          "lumber": 2400,
+          "stone": 3000,
+          "iron": 2000
+        }
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "scout_valley",
+      "category": "SCOUTING",
+      "name": "Scout Wilderness",
+      "requirements": [
+        {
+          "type": "military_event",
+          "event": "SCOUT_VALLEY",
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "resources": {
+          "food": 500,
+          "lumber": 500,
+          "iron": 500
+        }
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "scout_city",
+      "category": "SCOUTING",
+      "name": "Scout City",
+      "requirements": [
+        {
+          "type": "military_event",
+          "event": "SCOUT_CITY",
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "gold": 1000
+      },
+      "source_note": "Routine Quest"
+    },
+    {
+      "key": "recruit_hero",
+      "category": "HERO",
+      "name": "Recruit a Hero",
+      "requirements": [
+        {
+          "type": "hero_count",
+          "count": 1
+        }
+      ],
+      "rewards": {},
+      "reward_status": "HISTORICAL_VALUE_UNKNOWN"
+    },
+    {
+      "key": "join_alliance",
+      "category": "ALLIANCE",
+      "name": "Join an Alliance",
+      "requirements": [
+        {
+          "type": "alliance_member"
+        }
+      ],
+      "rewards": {},
+      "reward_status": "HISTORICAL_VALUE_UNKNOWN"
+    },
+    {
+      "key": "train_workers_10",
+      "category": "MILITARY",
+      "name": "Recruit Workers",
+      "requirements": [
+        {
+          "type": "troop_quantity",
+          "troop": "worker",
+          "quantity": 10
+        }
+      ],
+      "rewards": {},
+      "reward_status": "HISTORICAL_VALUE_UNKNOWN"
+    },
+    {
+      "key": "train_warriors_10",
+      "category": "MILITARY",
+      "name": "Recruit Warriors",
+      "requirements": [
+        {
+          "type": "troop_quantity",
+          "troop": "warrior",
+          "quantity": 10
+        }
+      ],
+      "rewards": {},
+      "reward_status": "HISTORICAL_VALUE_UNKNOWN"
+    },
+    {
+      "key": "prestige_1000",
+      "category": "PROGRESSION",
+      "name": "Rising Reputation",
+      "requirements": [
+        {
+          "type": "prestige",
+          "amount": 1000
+        }
+      ],
+      "rewards": {},
+      "reward_status": "HISTORICAL_VALUE_UNKNOWN"
+    },
+    {
+      "key": "npc8_conquer",
+      "category": "PROGRESSION",
+      "name": "Conquer Level 8 Barbarian City",
+      "requirements": [
+        {
+          "type": "military_event",
+          "event": "CONQUER_NPC",
+          "minimum_level": 8,
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "prestige": 4500
+      },
+      "source_note": "Routine Quest King/Queen target"
+    },
+    {
+      "key": "valley8_conquer",
+      "category": "PROGRESSION",
+      "name": "Conquer Level 8 Valley",
+      "requirements": [
+        {
+          "type": "military_event",
+          "event": "CONQUER_VALLEY",
+          "minimum_level": 8,
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "prestige": 2500
+      },
+      "source_note": "Routine Quest King/Queen target"
+    },
+    {
+      "key": "valley10_conquer",
+      "category": "PROGRESSION",
+      "name": "Conquer Level 10 Valley",
+      "requirements": [
+        {
+          "type": "military_event",
+          "event": "CONQUER_VALLEY",
+          "minimum_level": 10,
+          "count": 1
+        }
+      ],
+      "rewards": {
+        "prestige": 3500
+      },
+      "source_note": "Routine Quest King/Queen target"
+    }
+  ]
+}

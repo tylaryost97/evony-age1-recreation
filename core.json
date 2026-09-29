@@ -1,0 +1,7113 @@
+{
+  "schema_version": 2,
+  "policy": "Only sourced Age I values are encoded as historical facts. Unknowns remain HISTORICAL_VALUE_UNKNOWN.",
+  "city_layout": {
+    "interior_locations": 34,
+    "dedicated": {
+      "0": "town_hall",
+      "33": "walls"
+    },
+    "general_plot_indexes": {
+      "start": 1,
+      "end": 32
+    }
+  },
+  "buildings": {
+    "town_hall": {
+      "name": "Town Hall",
+      "purpose": "City administration and development.",
+      "location": "DEDICATED",
+      "repeatability": "SINGLE_DEDICATED"
+    },
+    "walls": {
+      "name": "Walls",
+      "purpose": "City durability and fortified-unit construction.",
+      "location": "DEDICATED",
+      "repeatability": false
+    },
+    "cottage": {
+      "name": "Cottage",
+      "purpose": "Increases the city's population limit.",
+      "location": "CITY",
+      "repeatability": "REPEATABLE"
+    },
+    "barracks": {
+      "name": "Barracks",
+      "purpose": "Troop training and dismissal. Each Barracks owns its own sequential training queue.",
+      "location": "CITY",
+      "repeatability": "MULTIPLE_VERIFIED"
+    },
+    "warehouse": {
+      "name": "Warehouse",
+      "purpose": "Stores resources protected from ordinary plunder, subject to Age I warehouse/privateering rules.",
+      "location": "CITY",
+      "repeatability": "MULTIPLE_VERIFIED"
+    },
+    "marketplace": {
+      "name": "Marketplace",
+      "purpose": "Player resource order book for Food, Lumber, Stone and Iron.",
+      "location": "CITY",
+      "repeatability": "HISTORICAL_VALUE_UNKNOWN"
+    },
+    "inn": {
+      "name": "Inn",
+      "purpose": "Presents heroes available for recruitment.",
+      "location": "CITY",
+      "repeatability": "HISTORICAL_VALUE_UNKNOWN"
+    },
+    "feasting_hall": {
+      "name": "Feasting Hall",
+      "purpose": "Houses recruited heroes and supports hero management.",
+      "location": "CITY",
+      "repeatability": "HISTORICAL_VALUE_UNKNOWN"
+    },
+    "embassy": {
+      "name": "Embassy",
+      "purpose": "Alliance access and allied troop garrison management.",
+      "location": "CITY",
+      "repeatability": "HISTORICAL_VALUE_UNKNOWN"
+    },
+    "academy": {
+      "name": "Academy",
+      "purpose": "Research Age I technologies.",
+      "location": "CITY",
+      "repeatability": false
+    },
+    "rally_spot": {
+      "name": "Rally Spot",
+      "purpose": "Army deployment, exercise and medic camp.",
+      "location": "CITY",
+      "repeatability": false
+    },
+    "beacon_tower": {
+      "name": "Beacon Tower",
+      "purpose": "Incoming invasion warning and progressively detailed enemy intelligence.",
+      "location": "CITY",
+      "repeatability": false
+    },
+    "forge": {
+      "name": "Forge",
+      "purpose": "Required for Military Science research and Workshop construction.",
+      "location": "CITY",
+      "repeatability": false
+    },
+    "stable": {
+      "name": "Stable",
+      "purpose": "Required for Horseback Riding research and Relief Station construction/upgrades.",
+      "location": "CITY",
+      "repeatability": false
+    },
+    "workshop": {
+      "name": "Workshop",
+      "purpose": "Required for Metal Casting and Walls; supports mechanical/siege dependencies.",
+      "location": "CITY",
+      "repeatability": false
+    },
+    "relief_station": {
+      "name": "Relief Station",
+      "purpose": "Speeds transport/reinforcement between own and allied cities from the sending city.",
+      "location": "CITY",
+      "repeatability": false
+    },
+    "farm": {
+      "name": "Farm",
+      "purpose": "Produces food in an exterior resource field.",
+      "location": "FIELD",
+      "repeatability": true,
+      "resource_kind": "food"
+    },
+    "sawmill": {
+      "name": "Sawmill",
+      "purpose": "Produces lumber in an exterior resource field.",
+      "location": "FIELD",
+      "repeatability": true,
+      "resource_kind": "lumber"
+    },
+    "quarry": {
+      "name": "Quarry",
+      "purpose": "Produces stone in an exterior resource field.",
+      "location": "FIELD",
+      "repeatability": true,
+      "resource_kind": "stone"
+    },
+    "ironmine": {
+      "name": "Iron Mine",
+      "purpose": "Produces iron in an exterior resource field.",
+      "location": "FIELD",
+      "repeatability": true,
+      "resource_kind": "iron"
+    }
+  },
+  "building_levels": {
+    "cottage": {
+      "1": {
+        "cost": {
+          "food": 100,
+          "lumber": 500,
+          "stone": 100,
+          "iron": 50
+        },
+        "seconds": 75,
+        "prerequisites": [],
+        "population_capacity": 100
+      },
+      "2": {
+        "cost": {
+          "food": 200,
+          "lumber": 1000,
+          "stone": 200,
+          "iron": 100
+        },
+        "seconds": 150,
+        "prerequisites": [],
+        "population_capacity": 300
+      },
+      "3": {
+        "cost": {
+          "food": 400,
+          "lumber": 2000,
+          "stone": 400,
+          "iron": 200
+        },
+        "seconds": 300,
+        "prerequisites": [
+          {
+            "building": "town_hall",
+            "level": 2
+          }
+        ],
+        "population_capacity": 600
+      },
+      "4": {
+        "cost": {
+          "food": 800,
+          "lumber": 4000,
+          "stone": 800,
+          "iron": 400
+        },
+        "seconds": 600,
+        "prerequisites": [
+          {
+            "building": "town_hall",
+            "level": 3
+          }
+        ],
+        "population_capacity": 1000
+      },
+      "5": {
+        "cost": {
+          "food": 1600,
+          "lumber": 8000,
+          "stone": 1600,
+          "iron": 800
+        },
+        "seconds": 1200,
+        "prerequisites": [
+          {
+            "building": "town_hall",
+            "level": 4
+          }
+        ],
+        "population_capacity": 1500
+      },
+      "6": {
+        "cost": {
+          "food": 3200,
+          "lumber": 16000,
+          "stone": 3200,
+          "iron": 1600
+        },
+        "seconds": 2400,
+        "prerequisites": [
+          {
+            "building": "town_hall",
+            "level": 5
+          }
+        ],
+        "population_capacity": 2100
+      },
+      "7": {
+        "cost": {
+          "food": 6400,
+          "lumber": 32000,
+          "stone": 6400,
+          "iron": 3200
+        },
+        "seconds": 4800,
+        "prerequisites": [
+          {
+            "building": "town_hall",
+            "level": 6
+          }
+        ],
+        "population_capacity": 2800
+      },
+      "8": {
+        "cost": {
+          "food": 12800,
+          "lumber": 64000,
+          "stone": 12800,
+          "iron": 6400
+        },
+        "seconds": 9600,
+        "prerequisites": [
+          {
+            "building": "town_hall",
+            "level": 7
+          }
+        ],
+        "population_capacity": 3600
+      },
+      "9": {
+        "cost": {
+          "food": 25600,
+          "lumber": 128000,
+          "stone": 25600,
+          "iron": 12800
+        },
+        "seconds": 19200,
+        "prerequisites": [
+          {
+            "building": "town_hall",
+            "level": 8
+          }
+        ],
+        "population_capacity": 4500
+      },
+      "10": {
+        "cost": {
+          "food": 51200,
+          "lumber": 256000,
+          "stone": 51200,
+          "iron": 25600
+        },
+        "seconds": 38400,
+        "prerequisites": [
+          {
+            "building": "town_hall",
+            "level": 9
+          }
+        ],
+        "population_capacity": 5500,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "barracks": {
+      "1": {
+        "cost": {
+          "food": 250,
+          "lumber": 1200,
+          "stone": 1500,
+          "iron": 500
+        },
+        "seconds": 300,
+        "prerequisites": [
+          {
+            "building": "rally_spot",
+            "level": 1
+          }
+        ],
+        "troop_queue_slots": 1
+      },
+      "2": {
+        "cost": {
+          "food": 500,
+          "lumber": 2400,
+          "stone": 3000,
+          "iron": 1000
+        },
+        "seconds": 600,
+        "prerequisites": [],
+        "troop_queue_slots": 2
+      },
+      "3": {
+        "cost": {
+          "food": 1000,
+          "lumber": 4800,
+          "stone": 6000,
+          "iron": 2000
+        },
+        "seconds": 1200,
+        "prerequisites": [],
+        "troop_queue_slots": 3
+      },
+      "4": {
+        "cost": {
+          "food": 2000,
+          "lumber": 9600,
+          "stone": 12000,
+          "iron": 4000
+        },
+        "seconds": 2400,
+        "prerequisites": [],
+        "troop_queue_slots": 4
+      },
+      "5": {
+        "cost": {
+          "food": 4000,
+          "lumber": 19200,
+          "stone": 24000,
+          "iron": 8000
+        },
+        "seconds": 4800,
+        "prerequisites": [],
+        "troop_queue_slots": 5
+      },
+      "6": {
+        "cost": {
+          "food": 8000,
+          "lumber": 38400,
+          "stone": 48000,
+          "iron": 16000
+        },
+        "seconds": 9600,
+        "prerequisites": [],
+        "troop_queue_slots": 6
+      },
+      "7": {
+        "cost": {
+          "food": 16000,
+          "lumber": 76800,
+          "stone": 96000,
+          "iron": 32000
+        },
+        "seconds": 19200,
+        "prerequisites": [],
+        "troop_queue_slots": 7
+      },
+      "8": {
+        "cost": {
+          "food": 32000,
+          "lumber": 153600,
+          "stone": 192000,
+          "iron": 64000
+        },
+        "seconds": 38400,
+        "prerequisites": [],
+        "troop_queue_slots": 8
+      },
+      "9": {
+        "cost": {
+          "food": 64000,
+          "lumber": 307200,
+          "stone": 384000,
+          "iron": 128000
+        },
+        "seconds": 76800,
+        "prerequisites": [],
+        "troop_queue_slots": 9
+      },
+      "10": {
+        "cost": {
+          "food": 128000,
+          "lumber": 614400,
+          "stone": 768000,
+          "iron": 256000
+        },
+        "seconds": 153600,
+        "prerequisites": [],
+        "troop_queue_slots": 10,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "warehouse": {
+      "1": {
+        "cost": {
+          "food": 100,
+          "lumber": 1500,
+          "stone": 1000,
+          "iron": 300
+        },
+        "seconds": 600,
+        "prerequisites": [],
+        "storage_capacity": 10000
+      },
+      "2": {
+        "cost": {
+          "food": 200,
+          "lumber": 3000,
+          "stone": 2000,
+          "iron": 600
+        },
+        "seconds": 1200,
+        "prerequisites": [],
+        "storage_capacity": 30000
+      },
+      "3": {
+        "cost": {
+          "food": 400,
+          "lumber": 6000,
+          "stone": 4000,
+          "iron": 1200
+        },
+        "seconds": 2400,
+        "prerequisites": [],
+        "storage_capacity": 60000
+      },
+      "4": {
+        "cost": {
+          "food": 800,
+          "lumber": 12000,
+          "stone": 8000,
+          "iron": 2400
+        },
+        "seconds": 4800,
+        "prerequisites": [],
+        "storage_capacity": 100000
+      },
+      "5": {
+        "cost": {
+          "food": 1600,
+          "lumber": 24000,
+          "stone": 16000,
+          "iron": 4800
+        },
+        "seconds": 9600,
+        "prerequisites": [],
+        "storage_capacity": 150000
+      },
+      "6": {
+        "cost": {
+          "food": 3200,
+          "lumber": 48000,
+          "stone": 32000,
+          "iron": 9600
+        },
+        "seconds": 19200,
+        "prerequisites": [],
+        "storage_capacity": 210000
+      },
+      "7": {
+        "cost": {
+          "food": 6400,
+          "lumber": 96000,
+          "stone": 64000,
+          "iron": 19200
+        },
+        "seconds": 38400,
+        "prerequisites": [],
+        "storage_capacity": 280000
+      },
+      "8": {
+        "cost": {
+          "food": 12800,
+          "lumber": 182000,
+          "stone": 128000,
+          "iron": 38400
+        },
+        "seconds": 76800,
+        "prerequisites": [],
+        "storage_capacity": 360000
+      },
+      "9": {
+        "cost": {
+          "food": 25600,
+          "lumber": 364000,
+          "stone": 256000,
+          "iron": 76800
+        },
+        "seconds": 153600,
+        "prerequisites": [],
+        "storage_capacity": 450000
+      },
+      "10": {
+        "cost": {
+          "food": 51200,
+          "lumber": 728000,
+          "stone": 512000,
+          "iron": 153600
+        },
+        "seconds": 307200,
+        "prerequisites": [],
+        "storage_capacity": 550000,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "marketplace": {
+      "1": {
+        "cost": {
+          "food": 1000,
+          "lumber": 1000,
+          "stone": 1000,
+          "iron": 1000
+        },
+        "seconds": 750,
+        "prerequisites": [],
+        "concurrent_transactions": 1
+      },
+      "2": {
+        "cost": {
+          "food": 2000,
+          "lumber": 2000,
+          "stone": 2000,
+          "iron": 2000
+        },
+        "seconds": 1500,
+        "prerequisites": [],
+        "concurrent_transactions": 2
+      },
+      "3": {
+        "cost": {
+          "food": 4000,
+          "lumber": 4000,
+          "stone": 4000,
+          "iron": 4000
+        },
+        "seconds": 3000,
+        "prerequisites": [],
+        "concurrent_transactions": 3
+      },
+      "4": {
+        "cost": {
+          "food": 8000,
+          "lumber": 8000,
+          "stone": 8000,
+          "iron": 8000
+        },
+        "seconds": 6000,
+        "prerequisites": [],
+        "concurrent_transactions": 4
+      },
+      "5": {
+        "cost": {
+          "food": 16000,
+          "lumber": 16000,
+          "stone": 16000,
+          "iron": 16000
+        },
+        "seconds": 12000,
+        "prerequisites": [],
+        "concurrent_transactions": 5
+      },
+      "6": {
+        "cost": {
+          "food": 32000,
+          "lumber": 32000,
+          "stone": 32000,
+          "iron": 32000
+        },
+        "seconds": 24000,
+        "prerequisites": [],
+        "concurrent_transactions": 6
+      },
+      "7": {
+        "cost": {
+          "food": 64000,
+          "lumber": 64000,
+          "stone": 64000,
+          "iron": 64000
+        },
+        "seconds": 48000,
+        "prerequisites": [],
+        "concurrent_transactions": 7
+      },
+      "8": {
+        "cost": {
+          "food": 128000,
+          "lumber": 128000,
+          "stone": 128000,
+          "iron": 128000
+        },
+        "seconds": 96000,
+        "prerequisites": [],
+        "concurrent_transactions": 8
+      },
+      "9": {
+        "cost": {
+          "food": 256000,
+          "lumber": 256000,
+          "stone": 256000,
+          "iron": 256000
+        },
+        "seconds": 192000,
+        "prerequisites": [],
+        "concurrent_transactions": 9
+      },
+      "10": {
+        "cost": {
+          "food": 512000,
+          "lumber": 512000,
+          "stone": 512000,
+          "iron": 512000
+        },
+        "seconds": 384000,
+        "prerequisites": [],
+        "concurrent_transactions": 10,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "inn": {
+      "1": {
+        "cost": {
+          "food": 300,
+          "lumber": 2000,
+          "stone": 1000,
+          "iron": 400
+        },
+        "seconds": 240,
+        "prerequisites": [
+          {
+            "building": "cottage",
+            "level": 2
+          }
+        ],
+        "available_heroes": 1
+      },
+      "2": {
+        "cost": {
+          "food": 600,
+          "lumber": 4000,
+          "stone": 2000,
+          "iron": 800
+        },
+        "seconds": 480,
+        "prerequisites": [],
+        "available_heroes": 2
+      },
+      "3": {
+        "cost": {
+          "food": 1200,
+          "lumber": 8000,
+          "stone": 4000,
+          "iron": 1600
+        },
+        "seconds": 960,
+        "prerequisites": [],
+        "available_heroes": 3
+      },
+      "4": {
+        "cost": {
+          "food": 2400,
+          "lumber": 16000,
+          "stone": 8000,
+          "iron": 3200
+        },
+        "seconds": 1920,
+        "prerequisites": [],
+        "available_heroes": 4
+      },
+      "5": {
+        "cost": {
+          "food": 4800,
+          "lumber": 32000,
+          "stone": 16000,
+          "iron": 6400
+        },
+        "seconds": 3840,
+        "prerequisites": [],
+        "available_heroes": 5
+      },
+      "6": {
+        "cost": {
+          "food": 9600,
+          "lumber": 64000,
+          "stone": 32000,
+          "iron": 12800
+        },
+        "seconds": 7680,
+        "prerequisites": [],
+        "available_heroes": 6
+      },
+      "7": {
+        "cost": {
+          "food": 19200,
+          "lumber": 128000,
+          "stone": 64000,
+          "iron": 25600
+        },
+        "seconds": 15360,
+        "prerequisites": [],
+        "available_heroes": 7
+      },
+      "8": {
+        "cost": {
+          "food": 38400,
+          "lumber": 256000,
+          "stone": 128000,
+          "iron": 51200
+        },
+        "seconds": 30720,
+        "prerequisites": [],
+        "available_heroes": 8
+      },
+      "9": {
+        "cost": {
+          "food": 76800,
+          "lumber": 512000,
+          "stone": 256000,
+          "iron": 102400
+        },
+        "seconds": 61440,
+        "prerequisites": [],
+        "available_heroes": 9
+      },
+      "10": {
+        "cost": {
+          "food": 153600,
+          "lumber": 1024000,
+          "stone": 512000,
+          "iron": 204800
+        },
+        "seconds": 122880,
+        "prerequisites": [
+          {
+            "building": "cottage",
+            "level": 2
+          }
+        ],
+        "available_heroes": 10,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "rally_spot": {
+      "1": {
+        "cost": {
+          "food": 100,
+          "lumber": 600,
+          "stone": 2000,
+          "iron": 150
+        },
+        "seconds": 150,
+        "prerequisites": [],
+        "march_slots": 1,
+        "troop_limit": 10000
+      },
+      "2": {
+        "cost": {
+          "food": 200,
+          "lumber": 1200,
+          "stone": 4000,
+          "iron": 300
+        },
+        "seconds": 300,
+        "prerequisites": [],
+        "march_slots": 2,
+        "troop_limit": 20000
+      },
+      "3": {
+        "cost": {
+          "food": 400,
+          "lumber": 2400,
+          "stone": 8000,
+          "iron": 600
+        },
+        "seconds": 600,
+        "prerequisites": [],
+        "march_slots": 3,
+        "troop_limit": 30000
+      },
+      "4": {
+        "cost": {
+          "food": 800,
+          "lumber": 4800,
+          "stone": 16000,
+          "iron": 1200
+        },
+        "seconds": 1200,
+        "prerequisites": [],
+        "march_slots": 4,
+        "troop_limit": 40000
+      },
+      "5": {
+        "cost": {
+          "food": 1600,
+          "lumber": 9600,
+          "stone": 32000,
+          "iron": 2400
+        },
+        "seconds": 2400,
+        "prerequisites": [],
+        "march_slots": 5,
+        "troop_limit": 50000
+      },
+      "6": {
+        "cost": {
+          "food": 3200,
+          "lumber": 18200,
+          "stone": 64000,
+          "iron": 4800
+        },
+        "seconds": 4800,
+        "prerequisites": [],
+        "march_slots": 6,
+        "troop_limit": 60000
+      },
+      "7": {
+        "cost": {
+          "food": 6400,
+          "lumber": 38400,
+          "stone": 128000,
+          "iron": 9600
+        },
+        "seconds": 9600,
+        "prerequisites": [],
+        "march_slots": 7,
+        "troop_limit": 70000
+      },
+      "8": {
+        "cost": {
+          "food": 12800,
+          "lumber": 76800,
+          "stone": 256000,
+          "iron": 19200
+        },
+        "seconds": 19200,
+        "prerequisites": [],
+        "march_slots": 8,
+        "troop_limit": 80000
+      },
+      "9": {
+        "cost": {
+          "food": 25600,
+          "lumber": 153600,
+          "stone": 512000,
+          "iron": 38400
+        },
+        "seconds": 38400,
+        "prerequisites": [],
+        "march_slots": 9,
+        "troop_limit": 90000
+      },
+      "10": {
+        "cost": {
+          "food": 51200,
+          "lumber": 307200,
+          "stone": 1024000,
+          "iron": 76800
+        },
+        "seconds": 76800,
+        "prerequisites": [],
+        "march_slots": 10,
+        "troop_limit": 100000,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "feasting_hall": {
+      "1": {
+        "cost": {
+          "food": 400,
+          "lumber": 2500,
+          "stone": 1200,
+          "iron": 700
+        },
+        "seconds": 360,
+        "prerequisites": [
+          {
+            "building": "inn",
+            "level": 1
+          }
+        ],
+        "hero_capacity": 1
+      },
+      "2": {
+        "cost": {
+          "food": 800,
+          "lumber": 5000,
+          "stone": 2400,
+          "iron": 1400
+        },
+        "seconds": 720,
+        "prerequisites": [],
+        "hero_capacity": 2
+      },
+      "3": {
+        "cost": {
+          "food": 1600,
+          "lumber": 10000,
+          "stone": 4800,
+          "iron": 2800
+        },
+        "seconds": 1440,
+        "prerequisites": [],
+        "hero_capacity": 3
+      },
+      "4": {
+        "cost": {
+          "food": 3200,
+          "lumber": 20000,
+          "stone": 9600,
+          "iron": 5600
+        },
+        "seconds": 2880,
+        "prerequisites": [],
+        "hero_capacity": 4
+      },
+      "5": {
+        "cost": {
+          "food": 6400,
+          "lumber": 40000,
+          "stone": 19200,
+          "iron": 11200
+        },
+        "seconds": 5760,
+        "prerequisites": [],
+        "hero_capacity": 5
+      },
+      "6": {
+        "cost": {
+          "food": 12800,
+          "lumber": 80000,
+          "stone": 38400,
+          "iron": 22400
+        },
+        "seconds": 11520,
+        "prerequisites": [],
+        "hero_capacity": 6
+      },
+      "7": {
+        "cost": {
+          "food": 25600,
+          "lumber": 160000,
+          "stone": 76800,
+          "iron": 44800
+        },
+        "seconds": 23040,
+        "prerequisites": [],
+        "hero_capacity": 7
+      },
+      "8": {
+        "cost": {
+          "food": 51200,
+          "lumber": 320000,
+          "stone": 153600,
+          "iron": 89600
+        },
+        "seconds": 46080,
+        "prerequisites": [],
+        "hero_capacity": 8
+      },
+      "9": {
+        "cost": {
+          "food": 102400,
+          "lumber": 640000,
+          "stone": 307200,
+          "iron": 179600
+        },
+        "seconds": 92160,
+        "prerequisites": [],
+        "hero_capacity": 9
+      },
+      "10": {
+        "cost": {
+          "food": 204800,
+          "lumber": 1280000,
+          "stone": 614400,
+          "iron": 358400
+        },
+        "seconds": 184320,
+        "prerequisites": [
+          {
+            "building": "inn",
+            "level": 1
+          }
+        ],
+        "hero_capacity": 10,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "embassy": {
+      "1": {
+        "cost": {
+          "food": 200,
+          "lumber": 2000,
+          "stone": 500,
+          "iron": 300
+        },
+        "seconds": 720,
+        "prerequisites": [
+          {
+            "building": "town_hall",
+            "level": 2
+          }
+        ],
+        "garrisons_allowed": 1,
+        "alliance_limit_if_host": 10
+      },
+      "2": {
+        "cost": {
+          "food": 400,
+          "lumber": 4000,
+          "stone": 1000,
+          "iron": 600
+        },
+        "seconds": 1440,
+        "prerequisites": [],
+        "garrisons_allowed": 2,
+        "alliance_limit_if_host": 20
+      },
+      "3": {
+        "cost": {
+          "food": 800,
+          "lumber": 8000,
+          "stone": 2000,
+          "iron": 1200
+        },
+        "seconds": 2880,
+        "prerequisites": [],
+        "garrisons_allowed": 3,
+        "alliance_limit_if_host": 30
+      },
+      "4": {
+        "cost": {
+          "food": 1600,
+          "lumber": 16000,
+          "stone": 4000,
+          "iron": 2400
+        },
+        "seconds": 5760,
+        "prerequisites": [],
+        "garrisons_allowed": 4,
+        "alliance_limit_if_host": 40
+      },
+      "5": {
+        "cost": {
+          "food": 3200,
+          "lumber": 32000,
+          "stone": 8000,
+          "iron": 4800
+        },
+        "seconds": 11520,
+        "prerequisites": [],
+        "garrisons_allowed": 5,
+        "alliance_limit_if_host": 50
+      },
+      "6": {
+        "cost": {
+          "food": 6400,
+          "lumber": 64000,
+          "stone": 16000,
+          "iron": 9600
+        },
+        "seconds": 23040,
+        "prerequisites": [],
+        "garrisons_allowed": 6,
+        "alliance_limit_if_host": 60
+      },
+      "7": {
+        "cost": {
+          "food": 12800,
+          "lumber": 128000,
+          "stone": 32000,
+          "iron": 19200
+        },
+        "seconds": 46080,
+        "prerequisites": [],
+        "garrisons_allowed": 7,
+        "alliance_limit_if_host": 70
+      },
+      "8": {
+        "cost": {
+          "food": 25600,
+          "lumber": 256000,
+          "stone": 64000,
+          "iron": 38400
+        },
+        "seconds": 92160,
+        "prerequisites": [],
+        "garrisons_allowed": 8,
+        "alliance_limit_if_host": 80
+      },
+      "9": {
+        "cost": {
+          "food": 51200,
+          "lumber": 512000,
+          "stone": 128000,
+          "iron": 76800
+        },
+        "seconds": 184320,
+        "prerequisites": [],
+        "garrisons_allowed": 9,
+        "alliance_limit_if_host": 90
+      },
+      "10": {
+        "cost": {
+          "food": 102400,
+          "lumber": 1024000,
+          "stone": 256000,
+          "iron": 153600
+        },
+        "seconds": 368640,
+        "prerequisites": [],
+        "garrisons_allowed": 10,
+        "alliance_limit_if_host": 100,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "academy": {
+      "1": {
+        "cost": {
+          "food": 120,
+          "lumber": 2500,
+          "stone": 1500,
+          "iron": 200
+        },
+        "seconds": 480,
+        "prerequisites": [
+          {
+            "building": "town_hall",
+            "level": 2
+          }
+        ],
+        "item_cost": {}
+      },
+      "2": {
+        "cost": {
+          "food": 240,
+          "lumber": 5000,
+          "stone": 3000,
+          "iron": 400
+        },
+        "seconds": 960,
+        "prerequisites": [],
+        "item_cost": {}
+      },
+      "3": {
+        "cost": {
+          "food": 480,
+          "lumber": 10000,
+          "stone": 6000,
+          "iron": 800
+        },
+        "seconds": 1920,
+        "prerequisites": [],
+        "item_cost": {}
+      },
+      "4": {
+        "cost": {
+          "food": 960,
+          "lumber": 20000,
+          "stone": 12000,
+          "iron": 1600
+        },
+        "seconds": 3840,
+        "prerequisites": [],
+        "item_cost": {}
+      },
+      "5": {
+        "cost": {
+          "food": 1920,
+          "lumber": 40000,
+          "stone": 24000,
+          "iron": 3200
+        },
+        "seconds": 7680,
+        "prerequisites": [],
+        "item_cost": {}
+      },
+      "6": {
+        "cost": {
+          "food": 3840,
+          "lumber": 80000,
+          "stone": 48000,
+          "iron": 6400
+        },
+        "seconds": 15360,
+        "prerequisites": [],
+        "item_cost": {}
+      },
+      "7": {
+        "cost": {
+          "food": 7680,
+          "lumber": 160000,
+          "stone": 96000,
+          "iron": 12800
+        },
+        "seconds": 30720,
+        "prerequisites": [],
+        "item_cost": {}
+      },
+      "8": {
+        "cost": {
+          "food": 15360,
+          "lumber": 320000,
+          "stone": 192000,
+          "iron": 25600
+        },
+        "seconds": 61440,
+        "prerequisites": [],
+        "item_cost": {}
+      },
+      "9": {
+        "cost": {
+          "food": 30720,
+          "lumber": 640000,
+          "stone": 384000,
+          "iron": 51200
+        },
+        "seconds": 122880,
+        "prerequisites": [],
+        "item_cost": {}
+      },
+      "10": {
+        "cost": {
+          "food": 61440,
+          "lumber": 1280000,
+          "stone": 768000,
+          "iron": 102400
+        },
+        "seconds": 245760,
+        "prerequisites": [],
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "beacon_tower": {
+      "1": {
+        "cost": {
+          "food": 150,
+          "lumber": 1000,
+          "stone": 3000,
+          "iron": 300
+        },
+        "seconds": 450,
+        "prerequisites": [
+          {
+            "building": "barracks",
+            "level": 1
+          }
+        ],
+        "alert_unlock": "invasion_warning"
+      },
+      "2": {
+        "cost": {
+          "food": 300,
+          "lumber": 2000,
+          "stone": 6000,
+          "iron": 600
+        },
+        "seconds": 900,
+        "prerequisites": [],
+        "alert_unlock": "enemy_purpose"
+      },
+      "3": {
+        "cost": {
+          "food": 600,
+          "lumber": 4000,
+          "stone": 12000,
+          "iron": 1200
+        },
+        "seconds": 1800,
+        "prerequisites": [],
+        "alert_unlock": "arrival_time"
+      },
+      "4": {
+        "cost": {
+          "food": 1200,
+          "lumber": 8000,
+          "stone": 24000,
+          "iron": 2400
+        },
+        "seconds": 3600,
+        "prerequisites": [],
+        "alert_unlock": "enemy_lord_status"
+      },
+      "5": {
+        "cost": {
+          "food": 2400,
+          "lumber": 16000,
+          "stone": 48000,
+          "iron": 4800
+        },
+        "seconds": 7200,
+        "prerequisites": [],
+        "alert_unlock": "departure_location"
+      },
+      "6": {
+        "cost": {
+          "food": 4800,
+          "lumber": 32000,
+          "stone": 96000,
+          "iron": 9600
+        },
+        "seconds": 14400,
+        "prerequisites": [],
+        "alert_unlock": "arms_branch"
+      },
+      "7": {
+        "cost": {
+          "food": 9600,
+          "lumber": 64000,
+          "stone": 192000,
+          "iron": 19200
+        },
+        "seconds": 28800,
+        "prerequisites": [],
+        "alert_unlock": "approximate_numbers"
+      },
+      "8": {
+        "cost": {
+          "food": 19200,
+          "lumber": 128000,
+          "stone": 384000,
+          "iron": 38400
+        },
+        "seconds": 57600,
+        "prerequisites": [],
+        "alert_unlock": "exact_numbers"
+      },
+      "9": {
+        "cost": {
+          "food": 38400,
+          "lumber": 256000,
+          "stone": 768000,
+          "iron": 76800
+        },
+        "seconds": 115200,
+        "prerequisites": [],
+        "alert_unlock": "leading_hero_level"
+      },
+      "10": {
+        "cost": {
+          "food": 76800,
+          "lumber": 512000,
+          "stone": 1536000,
+          "iron": 153600
+        },
+        "seconds": 230400,
+        "prerequisites": [],
+        "alert_unlock": "enemy_military_technology",
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "forge": {
+      "1": {
+        "cost": {
+          "food": 125,
+          "lumber": 1000,
+          "stone": 600,
+          "iron": 1200
+        },
+        "seconds": 180,
+        "prerequisites": [
+          {
+            "building": "ironmine",
+            "level": 3
+          }
+        ],
+        "military_science_supported_level": 1
+      },
+      "2": {
+        "cost": {
+          "food": 250,
+          "lumber": 2000,
+          "stone": 1200,
+          "iron": 2400
+        },
+        "seconds": 360,
+        "prerequisites": [],
+        "military_science_supported_level": 2
+      },
+      "3": {
+        "cost": {
+          "food": 500,
+          "lumber": 4000,
+          "stone": 2400,
+          "iron": 4800
+        },
+        "seconds": 720,
+        "prerequisites": [],
+        "military_science_supported_level": 3
+      },
+      "4": {
+        "cost": {
+          "food": 1000,
+          "lumber": 8000,
+          "stone": 4800,
+          "iron": 9600
+        },
+        "seconds": 1440,
+        "prerequisites": [],
+        "military_science_supported_level": 4
+      },
+      "5": {
+        "cost": {
+          "food": 2000,
+          "lumber": 16000,
+          "stone": 9600,
+          "iron": 19200
+        },
+        "seconds": 2880,
+        "prerequisites": [],
+        "military_science_supported_level": 5
+      },
+      "6": {
+        "cost": {
+          "food": 4000,
+          "lumber": 32000,
+          "stone": 19200,
+          "iron": 38400
+        },
+        "seconds": 5760,
+        "prerequisites": [],
+        "military_science_supported_level": 6
+      },
+      "7": {
+        "cost": {
+          "food": 8000,
+          "lumber": 64000,
+          "stone": 38400,
+          "iron": 76800
+        },
+        "seconds": 11520,
+        "prerequisites": [],
+        "military_science_supported_level": 7
+      },
+      "8": {
+        "cost": {
+          "food": 16000,
+          "lumber": 128000,
+          "stone": 76800,
+          "iron": 153600
+        },
+        "seconds": 23040,
+        "prerequisites": [],
+        "military_science_supported_level": 8
+      },
+      "9": {
+        "cost": {
+          "food": 32000,
+          "lumber": 256000,
+          "stone": 153600,
+          "iron": 307200
+        },
+        "seconds": 46080,
+        "prerequisites": [],
+        "military_science_supported_level": 9
+      },
+      "10": {
+        "cost": {
+          "food": 64000,
+          "lumber": 512000,
+          "stone": 307200,
+          "iron": 614400
+        },
+        "seconds": 92160,
+        "prerequisites": [],
+        "military_science_supported_level": 10,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "stable": {
+      "1": {
+        "cost": {
+          "food": 1200,
+          "lumber": 2000,
+          "stone": 800,
+          "iron": 1000
+        },
+        "seconds": 270,
+        "prerequisites": [
+          {
+            "building": "farm",
+            "level": 5
+          }
+        ],
+        "horseback_riding_supported_level": 1,
+        "relief_station_unlocked": true
+      },
+      "2": {
+        "cost": {
+          "food": 2400,
+          "lumber": 4000,
+          "stone": 1600,
+          "iron": 2000
+        },
+        "seconds": 540,
+        "prerequisites": [],
+        "horseback_riding_supported_level": 2,
+        "relief_station_unlocked": true
+      },
+      "3": {
+        "cost": {
+          "food": 4800,
+          "lumber": 8000,
+          "stone": 3200,
+          "iron": 4000
+        },
+        "seconds": 1080,
+        "prerequisites": [],
+        "horseback_riding_supported_level": 3,
+        "relief_station_unlocked": true
+      },
+      "4": {
+        "cost": {
+          "food": 9600,
+          "lumber": 16000,
+          "stone": 6400,
+          "iron": 8000
+        },
+        "seconds": 2160,
+        "prerequisites": [],
+        "horseback_riding_supported_level": 4,
+        "relief_station_unlocked": true
+      },
+      "5": {
+        "cost": {
+          "food": 19200,
+          "lumber": 32000,
+          "stone": 12800,
+          "iron": 16000
+        },
+        "seconds": 4320,
+        "prerequisites": [],
+        "horseback_riding_supported_level": 5,
+        "relief_station_unlocked": true
+      },
+      "6": {
+        "cost": {
+          "food": 38400,
+          "lumber": 64000,
+          "stone": 25600,
+          "iron": 32000
+        },
+        "seconds": 8640,
+        "prerequisites": [],
+        "horseback_riding_supported_level": 6,
+        "relief_station_unlocked": true
+      },
+      "7": {
+        "cost": {
+          "food": 76800,
+          "lumber": 128000,
+          "stone": 51200,
+          "iron": 64000
+        },
+        "seconds": 17280,
+        "prerequisites": [],
+        "horseback_riding_supported_level": 7,
+        "relief_station_unlocked": true
+      },
+      "8": {
+        "cost": {
+          "food": 153600,
+          "lumber": 256000,
+          "stone": 102400,
+          "iron": 128000
+        },
+        "seconds": 34560,
+        "prerequisites": [],
+        "horseback_riding_supported_level": 8,
+        "relief_station_unlocked": true
+      },
+      "9": {
+        "cost": {
+          "food": 307200,
+          "lumber": 512000,
+          "stone": 204800,
+          "iron": 256000
+        },
+        "seconds": 69120,
+        "prerequisites": [],
+        "horseback_riding_supported_level": 9,
+        "relief_station_unlocked": true
+      },
+      "10": {
+        "cost": {
+          "food": 614400,
+          "lumber": 1028000,
+          "stone": 409600,
+          "iron": 512000
+        },
+        "seconds": 138240,
+        "prerequisites": [],
+        "horseback_riding_supported_level": 10,
+        "relief_station_unlocked": true,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "workshop": {
+      "1": {
+        "cost": {
+          "food": 150,
+          "lumber": 1500,
+          "stone": 500,
+          "iron": 1500
+        },
+        "seconds": 540,
+        "prerequisites": [
+          {
+            "building": "forge",
+            "level": 2
+          }
+        ],
+        "metal_casting_supported_level": 1,
+        "walls_unlocked": true
+      },
+      "2": {
+        "cost": {
+          "food": 300,
+          "lumber": 3000,
+          "stone": 1000,
+          "iron": 3000
+        },
+        "seconds": 1080,
+        "prerequisites": [],
+        "metal_casting_supported_level": 2,
+        "walls_unlocked": true
+      },
+      "3": {
+        "cost": {
+          "food": 600,
+          "lumber": 6000,
+          "stone": 2000,
+          "iron": 6000
+        },
+        "seconds": 2160,
+        "prerequisites": [],
+        "metal_casting_supported_level": 3,
+        "walls_unlocked": true
+      },
+      "4": {
+        "cost": {
+          "food": 1200,
+          "lumber": 12000,
+          "stone": 4000,
+          "iron": 12000
+        },
+        "seconds": 4320,
+        "prerequisites": [],
+        "metal_casting_supported_level": 4,
+        "walls_unlocked": true
+      },
+      "5": {
+        "cost": {
+          "food": 2400,
+          "lumber": 24000,
+          "stone": 8000,
+          "iron": 24000
+        },
+        "seconds": 8640,
+        "prerequisites": [],
+        "metal_casting_supported_level": 5,
+        "walls_unlocked": true
+      },
+      "6": {
+        "cost": {
+          "food": 4800,
+          "lumber": 48000,
+          "stone": 16000,
+          "iron": 48000
+        },
+        "seconds": 17280,
+        "prerequisites": [],
+        "metal_casting_supported_level": 6,
+        "walls_unlocked": true
+      },
+      "7": {
+        "cost": {
+          "food": 9600,
+          "lumber": 96000,
+          "stone": 32000,
+          "iron": 96000
+        },
+        "seconds": 34560,
+        "prerequisites": [],
+        "metal_casting_supported_level": 7,
+        "walls_unlocked": true
+      },
+      "8": {
+        "cost": {
+          "food": 19200,
+          "lumber": 192000,
+          "stone": 64000,
+          "iron": 192000
+        },
+        "seconds": 69120,
+        "prerequisites": [],
+        "metal_casting_supported_level": 8,
+        "walls_unlocked": true
+      },
+      "9": {
+        "cost": {
+          "food": 38400,
+          "lumber": 384000,
+          "stone": 128000,
+          "iron": 384000
+        },
+        "seconds": 138240,
+        "prerequisites": [],
+        "metal_casting_supported_level": 9,
+        "walls_unlocked": true
+      },
+      "10": {
+        "cost": {
+          "food": 76800,
+          "lumber": 768000,
+          "stone": 256000,
+          "iron": 768000
+        },
+        "seconds": 276480,
+        "prerequisites": [],
+        "metal_casting_supported_level": 10,
+        "walls_unlocked": true,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "relief_station": {
+      "1": {
+        "cost": {
+          "food": 1500,
+          "lumber": 5000,
+          "stone": 4500,
+          "iron": 500
+        },
+        "seconds": 3600,
+        "prerequisites": [
+          {
+            "building": "stable",
+            "level": 1
+          },
+          {
+            "technology": "horseback_riding",
+            "level": 1
+          }
+        ],
+        "city_support_speed_multiplier": 2
+      },
+      "2": {
+        "cost": {
+          "food": 3000,
+          "lumber": 10000,
+          "stone": 9000,
+          "iron": 1000
+        },
+        "seconds": 7200,
+        "prerequisites": [
+          {
+            "building": "stable",
+            "level": 1
+          },
+          {
+            "technology": "horseback_riding",
+            "level": 2
+          }
+        ],
+        "city_support_speed_multiplier": 2
+      },
+      "3": {
+        "cost": {
+          "food": 6000,
+          "lumber": 20000,
+          "stone": 18000,
+          "iron": 2000
+        },
+        "seconds": 14400,
+        "prerequisites": [
+          {
+            "building": "stable",
+            "level": 1
+          },
+          {
+            "technology": "horseback_riding",
+            "level": 3
+          }
+        ],
+        "city_support_speed_multiplier": 2
+      },
+      "4": {
+        "cost": {
+          "food": 12000,
+          "lumber": 40000,
+          "stone": 36000,
+          "iron": 4000
+        },
+        "seconds": 28800,
+        "prerequisites": [
+          {
+            "building": "stable",
+            "level": 1
+          },
+          {
+            "technology": "horseback_riding",
+            "level": 4
+          }
+        ],
+        "city_support_speed_multiplier": 3
+      },
+      "5": {
+        "cost": {
+          "food": 24000,
+          "lumber": 80000,
+          "stone": 72000,
+          "iron": 8000
+        },
+        "seconds": 57600,
+        "prerequisites": [
+          {
+            "building": "stable",
+            "level": 1
+          },
+          {
+            "technology": "horseback_riding",
+            "level": 5
+          }
+        ],
+        "city_support_speed_multiplier": 4
+      },
+      "6": {
+        "cost": {
+          "food": 48000,
+          "lumber": 160000,
+          "stone": 144000,
+          "iron": 16000
+        },
+        "seconds": 115200,
+        "prerequisites": [
+          {
+            "building": "stable",
+            "level": 1
+          },
+          {
+            "technology": "horseback_riding",
+            "level": 6
+          }
+        ],
+        "city_support_speed_multiplier": 4
+      },
+      "7": {
+        "cost": {
+          "food": 96000,
+          "lumber": 320000,
+          "stone": 288000,
+          "iron": 32000
+        },
+        "seconds": 230400,
+        "prerequisites": [
+          {
+            "building": "stable",
+            "level": 1
+          },
+          {
+            "technology": "horseback_riding",
+            "level": 7
+          }
+        ],
+        "city_support_speed_multiplier": 4
+      },
+      "8": {
+        "cost": {
+          "food": 192000,
+          "lumber": 640000,
+          "stone": 576000,
+          "iron": 64000
+        },
+        "seconds": 460800,
+        "prerequisites": [
+          {
+            "building": "stable",
+            "level": 1
+          },
+          {
+            "technology": "horseback_riding",
+            "level": 8
+          }
+        ],
+        "city_support_speed_multiplier": 5
+      },
+      "9": {
+        "cost": {
+          "food": 384000,
+          "lumber": 1280000,
+          "stone": 1152000,
+          "iron": 128000
+        },
+        "seconds": 921600,
+        "prerequisites": [
+          {
+            "building": "stable",
+            "level": 1
+          },
+          {
+            "technology": "horseback_riding",
+            "level": 9
+          }
+        ],
+        "city_support_speed_multiplier": 5
+      },
+      "10": {
+        "cost": {
+          "food": 768000,
+          "lumber": 2560000,
+          "stone": 2304000,
+          "iron": 256000
+        },
+        "seconds": 1843200,
+        "prerequisites": [
+          {
+            "building": "stable",
+            "level": 1
+          },
+          {
+            "technology": "horseback_riding",
+            "level": 10
+          }
+        ],
+        "city_support_speed_multiplier": 6,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "walls": {
+      "1": {
+        "cost": {
+          "food": 3000,
+          "lumber": 1500,
+          "stone": 10000,
+          "iron": 500
+        },
+        "seconds": 1800,
+        "prerequisites": [
+          {
+            "building": "quarry",
+            "level": 2
+          },
+          {
+            "building": "workshop",
+            "level": 1
+          }
+        ],
+        "durability": 10000,
+        "fortified_spaces": 1000,
+        "fortification_queue_slots": 1
+      },
+      "2": {
+        "cost": {
+          "food": 6000,
+          "lumber": 3000,
+          "stone": 20000,
+          "iron": 1000
+        },
+        "seconds": 3600,
+        "prerequisites": [],
+        "durability": 30000,
+        "fortified_spaces": 3000,
+        "fortification_queue_slots": 2
+      },
+      "3": {
+        "cost": {
+          "food": 12000,
+          "lumber": 6000,
+          "stone": 40000,
+          "iron": 2000
+        },
+        "seconds": 7200,
+        "prerequisites": [],
+        "durability": 60000,
+        "fortified_spaces": 6000,
+        "fortification_queue_slots": 3
+      },
+      "4": {
+        "cost": {
+          "food": 24000,
+          "lumber": 12000,
+          "stone": 80000,
+          "iron": 4000
+        },
+        "seconds": 14400,
+        "prerequisites": [],
+        "durability": 100000,
+        "fortified_spaces": 10000,
+        "fortification_queue_slots": 4
+      },
+      "5": {
+        "cost": {
+          "food": 48000,
+          "lumber": 24000,
+          "stone": 160000,
+          "iron": 8000
+        },
+        "seconds": 28800,
+        "prerequisites": [],
+        "durability": 150000,
+        "fortified_spaces": 15000,
+        "fortification_queue_slots": 5
+      },
+      "6": {
+        "cost": {
+          "food": 96000,
+          "lumber": 48000,
+          "stone": 320000,
+          "iron": 16000
+        },
+        "seconds": 57600,
+        "prerequisites": [],
+        "durability": 210000,
+        "fortified_spaces": 21000,
+        "fortification_queue_slots": 6
+      },
+      "7": {
+        "cost": {
+          "food": 192000,
+          "lumber": 96000,
+          "stone": 640000,
+          "iron": 32000
+        },
+        "seconds": 115200,
+        "prerequisites": [],
+        "durability": 280000,
+        "fortified_spaces": 28000,
+        "fortification_queue_slots": 7
+      },
+      "8": {
+        "cost": {
+          "food": 384000,
+          "lumber": 192000,
+          "stone": 1280000,
+          "iron": 64000
+        },
+        "seconds": 230400,
+        "prerequisites": [],
+        "durability": 360000,
+        "fortified_spaces": 36000,
+        "fortification_queue_slots": 8
+      },
+      "9": {
+        "cost": {
+          "food": 768000,
+          "lumber": 384000,
+          "stone": 2560000,
+          "iron": 128000
+        },
+        "seconds": 460800,
+        "prerequisites": [],
+        "durability": 450000,
+        "fortified_spaces": 45000,
+        "fortification_queue_slots": 9
+      },
+      "10": {
+        "cost": {
+          "food": 1536000,
+          "lumber": 768000,
+          "stone": 5120000,
+          "iron": 256000
+        },
+        "seconds": 921600,
+        "prerequisites": [],
+        "durability": 550000,
+        "fortified_spaces": 55000,
+        "fortification_queue_slots": 10,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "farm": {
+      "1": {
+        "cost": {
+          "food": 50,
+          "lumber": 300,
+          "stone": 200,
+          "iron": 150
+        },
+        "seconds": 30,
+        "prerequisites": [],
+        "labor": 10,
+        "production_per_hour": 100,
+        "storage_capacity": 10000
+      },
+      "2": {
+        "cost": {
+          "food": 100,
+          "lumber": 600,
+          "stone": 400,
+          "iron": 300
+        },
+        "seconds": 60,
+        "prerequisites": [],
+        "labor": 30,
+        "production_per_hour": 300,
+        "storage_capacity": 30000
+      },
+      "3": {
+        "cost": {
+          "food": 200,
+          "lumber": 1200,
+          "stone": 800,
+          "iron": 600
+        },
+        "seconds": 120,
+        "prerequisites": [],
+        "labor": 60,
+        "production_per_hour": 600,
+        "storage_capacity": 60000
+      },
+      "4": {
+        "cost": {
+          "food": 400,
+          "lumber": 2400,
+          "stone": 1600,
+          "iron": 1200
+        },
+        "seconds": 240,
+        "prerequisites": [],
+        "labor": 100,
+        "production_per_hour": 1000,
+        "storage_capacity": 100000
+      },
+      "5": {
+        "cost": {
+          "food": 800,
+          "lumber": 4800,
+          "stone": 3200,
+          "iron": 2400
+        },
+        "seconds": 480,
+        "prerequisites": [],
+        "labor": 150,
+        "production_per_hour": 1500,
+        "storage_capacity": 150000
+      },
+      "6": {
+        "cost": {
+          "food": 1600,
+          "lumber": 9600,
+          "stone": 6400,
+          "iron": 4800
+        },
+        "seconds": 960,
+        "prerequisites": [],
+        "labor": 210,
+        "production_per_hour": 2100,
+        "storage_capacity": 210000
+      },
+      "7": {
+        "cost": {
+          "food": 3200,
+          "lumber": 19200,
+          "stone": 12800,
+          "iron": 9600
+        },
+        "seconds": 1920,
+        "prerequisites": [],
+        "labor": 280,
+        "production_per_hour": 2800,
+        "storage_capacity": 280000
+      },
+      "8": {
+        "cost": {
+          "food": 6400,
+          "lumber": 38400,
+          "stone": 25600,
+          "iron": 19200
+        },
+        "seconds": 3840,
+        "prerequisites": [],
+        "labor": 360,
+        "production_per_hour": 3600,
+        "storage_capacity": 360000
+      },
+      "9": {
+        "cost": {
+          "food": 12800,
+          "lumber": 76800,
+          "stone": 51200,
+          "iron": 38400
+        },
+        "seconds": 7680,
+        "prerequisites": [],
+        "labor": 450,
+        "production_per_hour": 4500,
+        "storage_capacity": 450000
+      },
+      "10": {
+        "cost": {
+          "food": 25600,
+          "lumber": 153600,
+          "stone": 102400,
+          "iron": 76800
+        },
+        "seconds": 15360,
+        "prerequisites": [],
+        "labor": 550,
+        "production_per_hour": 5500,
+        "storage_capacity": 550000,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "sawmill": {
+      "1": {
+        "cost": {
+          "food": 100,
+          "lumber": 100,
+          "stone": 250,
+          "iron": 300
+        },
+        "seconds": 45,
+        "prerequisites": [],
+        "labor": 10,
+        "production_per_hour": 100,
+        "storage_capacity": 10000
+      },
+      "2": {
+        "cost": {
+          "food": 200,
+          "lumber": 200,
+          "stone": 500,
+          "iron": 600
+        },
+        "seconds": 90,
+        "prerequisites": [],
+        "labor": 30,
+        "production_per_hour": 300,
+        "storage_capacity": 30000
+      },
+      "3": {
+        "cost": {
+          "food": 400,
+          "lumber": 400,
+          "stone": 1000,
+          "iron": 1200
+        },
+        "seconds": 180,
+        "prerequisites": [],
+        "labor": 60,
+        "production_per_hour": 600,
+        "storage_capacity": 60000
+      },
+      "4": {
+        "cost": {
+          "food": 800,
+          "lumber": 800,
+          "stone": 2000,
+          "iron": 2400
+        },
+        "seconds": 360,
+        "prerequisites": [],
+        "labor": 100,
+        "production_per_hour": 1000,
+        "storage_capacity": 100000
+      },
+      "5": {
+        "cost": {
+          "food": 1600,
+          "lumber": 1600,
+          "stone": 4000,
+          "iron": 4800
+        },
+        "seconds": 720,
+        "prerequisites": [],
+        "labor": 150,
+        "production_per_hour": 1500,
+        "storage_capacity": 150000
+      },
+      "6": {
+        "cost": {
+          "food": 3200,
+          "lumber": 3200,
+          "stone": 8000,
+          "iron": 9600
+        },
+        "seconds": 1440,
+        "prerequisites": [],
+        "labor": 210,
+        "production_per_hour": 2100,
+        "storage_capacity": 210000
+      },
+      "7": {
+        "cost": {
+          "food": 6400,
+          "lumber": 6400,
+          "stone": 16000,
+          "iron": 19200
+        },
+        "seconds": 2880,
+        "prerequisites": [],
+        "labor": 280,
+        "production_per_hour": 2800,
+        "storage_capacity": 280000
+      },
+      "8": {
+        "cost": {
+          "food": 12800,
+          "lumber": 12800,
+          "stone": 32000,
+          "iron": 38400
+        },
+        "seconds": 5760,
+        "prerequisites": [],
+        "labor": 360,
+        "production_per_hour": 3600,
+        "storage_capacity": 360000
+      },
+      "9": {
+        "cost": {
+          "food": 25600,
+          "lumber": 25600,
+          "stone": 64000,
+          "iron": 76800
+        },
+        "seconds": 11520,
+        "prerequisites": [],
+        "labor": 450,
+        "production_per_hour": 4500,
+        "storage_capacity": 450000
+      },
+      "10": {
+        "cost": {
+          "food": 51000,
+          "lumber": 51000,
+          "stone": 128000,
+          "iron": 153600
+        },
+        "seconds": 23040,
+        "prerequisites": [],
+        "labor": 550,
+        "production_per_hour": 5500,
+        "storage_capacity": 550000,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "quarry": {
+      "1": {
+        "cost": {
+          "food": 180,
+          "lumber": 500,
+          "stone": 150,
+          "iron": 400
+        },
+        "seconds": 60,
+        "prerequisites": [],
+        "labor": 20,
+        "production_per_hour": 100,
+        "storage_capacity": 10000
+      },
+      "2": {
+        "cost": {
+          "food": 360,
+          "lumber": 1000,
+          "stone": 300,
+          "iron": 800
+        },
+        "seconds": 120,
+        "prerequisites": [],
+        "labor": 60,
+        "production_per_hour": 300,
+        "storage_capacity": 30000
+      },
+      "3": {
+        "cost": {
+          "food": 720,
+          "lumber": 2000,
+          "stone": 600,
+          "iron": 1600
+        },
+        "seconds": 240,
+        "prerequisites": [],
+        "labor": 120,
+        "production_per_hour": 600,
+        "storage_capacity": 60000
+      },
+      "4": {
+        "cost": {
+          "food": 1440,
+          "lumber": 4000,
+          "stone": 1200,
+          "iron": 3200
+        },
+        "seconds": 480,
+        "prerequisites": [],
+        "labor": 200,
+        "production_per_hour": 1000,
+        "storage_capacity": 100000
+      },
+      "5": {
+        "cost": {
+          "food": 2880,
+          "lumber": 8000,
+          "stone": 2400,
+          "iron": 6400
+        },
+        "seconds": 960,
+        "prerequisites": [],
+        "labor": 300,
+        "production_per_hour": 1500,
+        "storage_capacity": 150000
+      },
+      "6": {
+        "cost": {
+          "food": 5760,
+          "lumber": 16000,
+          "stone": 4800,
+          "iron": 12800
+        },
+        "seconds": 1920,
+        "prerequisites": [],
+        "labor": 420,
+        "production_per_hour": 2100,
+        "storage_capacity": 210000
+      },
+      "7": {
+        "cost": {
+          "food": 11520,
+          "lumber": 32000,
+          "stone": 9600,
+          "iron": 25600
+        },
+        "seconds": 3840,
+        "prerequisites": [],
+        "labor": 560,
+        "production_per_hour": 2800,
+        "storage_capacity": 280000
+      },
+      "8": {
+        "cost": {
+          "food": 23040,
+          "lumber": 64000,
+          "stone": 19200,
+          "iron": 51200
+        },
+        "seconds": 7680,
+        "prerequisites": [],
+        "labor": 720,
+        "production_per_hour": 3600,
+        "storage_capacity": 360000
+      },
+      "9": {
+        "cost": {
+          "food": 46080,
+          "lumber": 128000,
+          "stone": 38400,
+          "iron": 102400
+        },
+        "seconds": 15360,
+        "prerequisites": [],
+        "labor": 900,
+        "production_per_hour": 4500,
+        "storage_capacity": 450000
+      },
+      "10": {
+        "cost": {
+          "food": 92160,
+          "lumber": 256000,
+          "stone": 76800,
+          "iron": 204800
+        },
+        "seconds": 30720,
+        "prerequisites": [],
+        "labor": 1100,
+        "production_per_hour": 5500,
+        "storage_capacity": 550000,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    },
+    "ironmine": {
+      "1": {
+        "cost": {
+          "food": 210,
+          "lumber": 600,
+          "stone": 500,
+          "iron": 200
+        },
+        "seconds": 90,
+        "prerequisites": [],
+        "labor": 25,
+        "production_per_hour": 100,
+        "storage_capacity": 10000
+      },
+      "2": {
+        "cost": {
+          "food": 420,
+          "lumber": 1200,
+          "stone": 1000,
+          "iron": 400
+        },
+        "seconds": 180,
+        "prerequisites": [],
+        "labor": 75,
+        "production_per_hour": 300,
+        "storage_capacity": 30000
+      },
+      "3": {
+        "cost": {
+          "food": 840,
+          "lumber": 2400,
+          "stone": 2000,
+          "iron": 800
+        },
+        "seconds": 360,
+        "prerequisites": [],
+        "labor": 150,
+        "production_per_hour": 600,
+        "storage_capacity": 60000
+      },
+      "4": {
+        "cost": {
+          "food": 1680,
+          "lumber": 4800,
+          "stone": 4000,
+          "iron": 1600
+        },
+        "seconds": 720,
+        "prerequisites": [],
+        "labor": 250,
+        "production_per_hour": 1000,
+        "storage_capacity": 100000
+      },
+      "5": {
+        "cost": {
+          "food": 3360,
+          "lumber": 9600,
+          "stone": 8000,
+          "iron": 3200
+        },
+        "seconds": 1440,
+        "prerequisites": [],
+        "labor": 375,
+        "production_per_hour": 1500,
+        "storage_capacity": 150000
+      },
+      "6": {
+        "cost": {
+          "food": 6720,
+          "lumber": 19200,
+          "stone": 16000,
+          "iron": 6400
+        },
+        "seconds": 2880,
+        "prerequisites": [],
+        "labor": 525,
+        "production_per_hour": 2100,
+        "storage_capacity": 210000
+      },
+      "7": {
+        "cost": {
+          "food": 13440,
+          "lumber": 38400,
+          "stone": 32000,
+          "iron": 12800
+        },
+        "seconds": 5760,
+        "prerequisites": [],
+        "labor": 700,
+        "production_per_hour": 2800,
+        "storage_capacity": 280000
+      },
+      "8": {
+        "cost": {
+          "food": 26880,
+          "lumber": 76800,
+          "stone": 64000,
+          "iron": 25600
+        },
+        "seconds": 11520,
+        "prerequisites": [],
+        "labor": 900,
+        "production_per_hour": 3600,
+        "storage_capacity": 360000
+      },
+      "9": {
+        "cost": {
+          "food": 53760,
+          "lumber": 153600,
+          "stone": 128000,
+          "iron": 51200
+        },
+        "seconds": 23040,
+        "prerequisites": [],
+        "labor": 1125,
+        "production_per_hour": 4500,
+        "storage_capacity": 450000
+      },
+      "10": {
+        "cost": {
+          "food": 107520,
+          "lumber": 307200,
+          "stone": 256000,
+          "iron": 102400
+        },
+        "seconds": 46080,
+        "prerequisites": [],
+        "labor": 1375,
+        "production_per_hour": 5500,
+        "storage_capacity": 550000,
+        "item_cost": {
+          "michelangelos_script": 1
+        }
+      }
+    }
+  },
+  "troop_types": {
+    "worker": {
+      "name": "Worker",
+      "barracks_level": 1,
+      "technology_requirements": {},
+      "cost": {
+        "food": 50,
+        "lumber": 150,
+        "stone": 0,
+        "iron": 10
+      },
+      "population": 1,
+      "base_training_seconds": 50,
+      "life": 100,
+      "attack": 5,
+      "defense": 10,
+      "load": 200,
+      "food_upkeep_per_hour": 2,
+      "speed_miles_per_1000_minutes": 180,
+      "range": 10
+    },
+    "warrior": {
+      "name": "Warrior",
+      "barracks_level": 1,
+      "technology_requirements": {},
+      "cost": {
+        "food": 80,
+        "lumber": 100,
+        "stone": 0,
+        "iron": 50
+      },
+      "population": 1,
+      "base_training_seconds": 25,
+      "life": 200,
+      "attack": 50,
+      "defense": 50,
+      "load": 20,
+      "food_upkeep_per_hour": 3,
+      "speed_miles_per_1000_minutes": 200,
+      "range": 20
+    },
+    "scout": {
+      "name": "Scout",
+      "barracks_level": 2,
+      "technology_requirements": {
+        "informatics": 1
+      },
+      "cost": {
+        "food": 120,
+        "lumber": 200,
+        "stone": 0,
+        "iron": 150
+      },
+      "population": 1,
+      "base_training_seconds": 100,
+      "life": 100,
+      "attack": 20,
+      "defense": 20,
+      "load": 5,
+      "food_upkeep_per_hour": 5,
+      "speed_miles_per_1000_minutes": 3000,
+      "range": 20
+    },
+    "pikeman": {
+      "name": "Pikeman",
+      "barracks_level": 2,
+      "technology_requirements": {
+        "military_tradition": 1
+      },
+      "cost": {
+        "food": 150,
+        "lumber": 500,
+        "stone": 0,
+        "iron": 100
+      },
+      "population": 1,
+      "base_training_seconds": 150,
+      "life": 300,
+      "attack": 150,
+      "defense": 150,
+      "load": 40,
+      "food_upkeep_per_hour": 6,
+      "speed_miles_per_1000_minutes": 300,
+      "range": 50
+    },
+    "swordsman": {
+      "name": "Swordsman",
+      "barracks_level": 3,
+      "technology_requirements": {
+        "iron_working": 1
+      },
+      "cost": {
+        "food": 200,
+        "lumber": 150,
+        "stone": 0,
+        "iron": 400
+      },
+      "population": 1,
+      "base_training_seconds": 225,
+      "life": 350,
+      "attack": 100,
+      "defense": 250,
+      "load": 30,
+      "food_upkeep_per_hour": 7,
+      "speed_miles_per_1000_minutes": 275,
+      "range": 30
+    },
+    "archer": {
+      "name": "Archer",
+      "barracks_level": 4,
+      "technology_requirements": {
+        "archery": 1
+      },
+      "cost": {
+        "food": 300,
+        "lumber": 350,
+        "stone": 0,
+        "iron": 300
+      },
+      "population": 2,
+      "base_training_seconds": 350,
+      "life": 250,
+      "attack": 120,
+      "defense": 50,
+      "load": 25,
+      "food_upkeep_per_hour": 9,
+      "speed_miles_per_1000_minutes": 250,
+      "range": 1200
+    },
+    "cavalry": {
+      "name": "Cavalry",
+      "barracks_level": 5,
+      "technology_requirements": {
+        "horseback_riding": 1
+      },
+      "cost": {
+        "food": 1000,
+        "lumber": 600,
+        "stone": 0,
+        "iron": 500
+      },
+      "population": 3,
+      "base_training_seconds": 500,
+      "life": 500,
+      "attack": 250,
+      "defense": 180,
+      "load": 100,
+      "food_upkeep_per_hour": 18,
+      "speed_miles_per_1000_minutes": 1000,
+      "range": 100
+    },
+    "cataphract": {
+      "name": "Cataphract",
+      "barracks_level": 7,
+      "technology_requirements": {
+        "iron_working": 5,
+        "horseback_riding": 5
+      },
+      "cost": {
+        "food": 2000,
+        "lumber": 500,
+        "stone": 0,
+        "iron": 2500
+      },
+      "population": 6,
+      "base_training_seconds": 1500,
+      "life": 1000,
+      "attack": 350,
+      "defense": 350,
+      "load": 80,
+      "food_upkeep_per_hour": 35,
+      "speed_miles_per_1000_minutes": 750,
+      "range": 80
+    },
+    "transporter": {
+      "name": "Transporter",
+      "barracks_level": 6,
+      "technology_requirements": {
+        "logistics": 1,
+        "metal_casting": 3
+      },
+      "cost": {
+        "food": 600,
+        "lumber": 1500,
+        "stone": 0,
+        "iron": 350
+      },
+      "population": 4,
+      "base_training_seconds": 1000,
+      "life": 700,
+      "attack": 10,
+      "defense": 60,
+      "load": 5000,
+      "food_upkeep_per_hour": 10,
+      "speed_miles_per_1000_minutes": 150,
+      "range": 10
+    },
+    "ballista": {
+      "name": "Ballista",
+      "barracks_level": 9,
+      "technology_requirements": {
+        "metal_casting": 5,
+        "archery": 6
+      },
+      "cost": {
+        "food": 2500,
+        "lumber": 3000,
+        "stone": 0,
+        "iron": 1800
+      },
+      "population": 5,
+      "base_training_seconds": 3000,
+      "life": 320,
+      "attack": 450,
+      "defense": 160,
+      "load": 35,
+      "food_upkeep_per_hour": 50,
+      "speed_miles_per_1000_minutes": 100,
+      "range": 1400
+    },
+    "battering_ram": {
+      "name": "Battering Ram",
+      "barracks_level": 9,
+      "technology_requirements": {
+        "metal_casting": 8
+      },
+      "cost": {
+        "food": 4000,
+        "lumber": 6000,
+        "stone": 0,
+        "iron": 1500
+      },
+      "population": 10,
+      "base_training_seconds": 4500,
+      "life": 5000,
+      "attack": 250,
+      "defense": 160,
+      "load": 45,
+      "food_upkeep_per_hour": 100,
+      "speed_miles_per_1000_minutes": 120,
+      "range": 600
+    },
+    "catapult": {
+      "name": "Catapult",
+      "barracks_level": 10,
+      "technology_requirements": {
+        "metal_casting": 10,
+        "archery": 10
+      },
+      "cost": {
+        "food": 5000,
+        "lumber": 5000,
+        "stone": 8000,
+        "iron": 1200
+      },
+      "population": 8,
+      "base_training_seconds": 6000,
+      "life": 480,
+      "attack": 600,
+      "defense": 200,
+      "load": 75,
+      "food_upkeep_per_hour": 250,
+      "speed_miles_per_1000_minutes": 80,
+      "range": 1500
+    }
+  },
+  "technologies": {
+    "agriculture": {
+      "name": "Agriculture",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 1,
+          "building_requirements": {
+            "farm": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 500
+          },
+          "gold": 1000,
+          "seconds": 400,
+          "effect": {
+            "type": "production_food",
+            "per_level": 0.1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 1,
+          "building_requirements": {
+            "farm": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 1000
+          },
+          "gold": 2000,
+          "seconds": 800,
+          "effect": {
+            "type": "production_food",
+            "per_level": 0.1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 1,
+          "building_requirements": {
+            "farm": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 2000
+          },
+          "gold": 4000,
+          "seconds": 1600,
+          "effect": {
+            "type": "production_food",
+            "per_level": 0.1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 1,
+          "building_requirements": {
+            "farm": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 4000
+          },
+          "gold": 8000,
+          "seconds": 3200,
+          "effect": {
+            "type": "production_food",
+            "per_level": 0.1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 1,
+          "building_requirements": {
+            "farm": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 8000
+          },
+          "gold": 16000,
+          "seconds": 6400,
+          "effect": {
+            "type": "production_food",
+            "per_level": 0.1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 1,
+          "building_requirements": {
+            "farm": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 16000
+          },
+          "gold": 32000,
+          "seconds": 12800,
+          "effect": {
+            "type": "production_food",
+            "per_level": 0.1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 1,
+          "building_requirements": {
+            "farm": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 32000
+          },
+          "gold": 64000,
+          "seconds": 25600,
+          "effect": {
+            "type": "production_food",
+            "per_level": 0.1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 1,
+          "building_requirements": {
+            "farm": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 64000
+          },
+          "gold": 128000,
+          "seconds": 51200,
+          "effect": {
+            "type": "production_food",
+            "per_level": 0.1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 1,
+          "building_requirements": {
+            "farm": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 128000
+          },
+          "gold": 256000,
+          "seconds": 102400,
+          "effect": {
+            "type": "production_food",
+            "per_level": 0.1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 1,
+          "building_requirements": {
+            "farm": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 256000
+          },
+          "gold": 512000,
+          "seconds": 204800,
+          "effect": {
+            "type": "production_food",
+            "per_level": 0.1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "lumbering": {
+      "name": "Lumbering",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 1,
+          "building_requirements": {
+            "sawmill": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "lumber": 500,
+            "iron": 100
+          },
+          "gold": 1200,
+          "seconds": 500,
+          "effect": {
+            "type": "production_lumber",
+            "per_level": 0.1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 1,
+          "building_requirements": {
+            "sawmill": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "lumber": 1000,
+            "iron": 200
+          },
+          "gold": 2400,
+          "seconds": 1000,
+          "effect": {
+            "type": "production_lumber",
+            "per_level": 0.1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 1,
+          "building_requirements": {
+            "sawmill": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "lumber": 2000,
+            "iron": 400
+          },
+          "gold": 4800,
+          "seconds": 2000,
+          "effect": {
+            "type": "production_lumber",
+            "per_level": 0.1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 1,
+          "building_requirements": {
+            "sawmill": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "lumber": 4000,
+            "iron": 800
+          },
+          "gold": 9600,
+          "seconds": 4000,
+          "effect": {
+            "type": "production_lumber",
+            "per_level": 0.1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 1,
+          "building_requirements": {
+            "sawmill": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "lumber": 8000,
+            "iron": 1600
+          },
+          "gold": 19200,
+          "seconds": 8000,
+          "effect": {
+            "type": "production_lumber",
+            "per_level": 0.1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 1,
+          "building_requirements": {
+            "sawmill": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "lumber": 16000,
+            "iron": 3200
+          },
+          "gold": 38400,
+          "seconds": 16000,
+          "effect": {
+            "type": "production_lumber",
+            "per_level": 0.1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 1,
+          "building_requirements": {
+            "sawmill": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "lumber": 32000,
+            "iron": 6400
+          },
+          "gold": 76800,
+          "seconds": 32000,
+          "effect": {
+            "type": "production_lumber",
+            "per_level": 0.1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 1,
+          "building_requirements": {
+            "sawmill": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "lumber": 64000,
+            "iron": 12800
+          },
+          "gold": 153600,
+          "seconds": 64000,
+          "effect": {
+            "type": "production_lumber",
+            "per_level": 0.1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 1,
+          "building_requirements": {
+            "sawmill": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "lumber": 128000,
+            "iron": 25600
+          },
+          "gold": 307200,
+          "seconds": 128000,
+          "effect": {
+            "type": "production_lumber",
+            "per_level": 0.1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 1,
+          "building_requirements": {
+            "sawmill": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "lumber": 256000,
+            "iron": 51200
+          },
+          "gold": 614400,
+          "seconds": 256000,
+          "effect": {
+            "type": "production_lumber",
+            "per_level": 0.1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "masonry": {
+      "name": "Masonry",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 2,
+          "building_requirements": {
+            "quarry": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 1
+          },
+          "cost": {
+            "stone": 500,
+            "iron": 200
+          },
+          "gold": 1500,
+          "seconds": 600,
+          "effect": {
+            "type": "production_stone",
+            "per_level": 0.1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 2,
+          "building_requirements": {
+            "quarry": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 1
+          },
+          "cost": {
+            "stone": 1000,
+            "iron": 400
+          },
+          "gold": 3000,
+          "seconds": 1200,
+          "effect": {
+            "type": "production_stone",
+            "per_level": 0.1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 2,
+          "building_requirements": {
+            "quarry": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 1
+          },
+          "cost": {
+            "stone": 2000,
+            "iron": 800
+          },
+          "gold": 6000,
+          "seconds": 2400,
+          "effect": {
+            "type": "production_stone",
+            "per_level": 0.1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 2,
+          "building_requirements": {
+            "quarry": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 1
+          },
+          "cost": {
+            "stone": 4000,
+            "iron": 1600
+          },
+          "gold": 12000,
+          "seconds": 4800,
+          "effect": {
+            "type": "production_stone",
+            "per_level": 0.1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 2,
+          "building_requirements": {
+            "quarry": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 1
+          },
+          "cost": {
+            "stone": 8000,
+            "iron": 3200
+          },
+          "gold": 24000,
+          "seconds": 9600,
+          "effect": {
+            "type": "production_stone",
+            "per_level": 0.1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 2,
+          "building_requirements": {
+            "quarry": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 1
+          },
+          "cost": {
+            "stone": 16000,
+            "iron": 6400
+          },
+          "gold": 48000,
+          "seconds": 19200,
+          "effect": {
+            "type": "production_stone",
+            "per_level": 0.1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 2,
+          "building_requirements": {
+            "quarry": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 1
+          },
+          "cost": {
+            "stone": 32000,
+            "iron": 12800
+          },
+          "gold": 96000,
+          "seconds": 38400,
+          "effect": {
+            "type": "production_stone",
+            "per_level": 0.1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 2,
+          "building_requirements": {
+            "quarry": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 1
+          },
+          "cost": {
+            "stone": 64000,
+            "iron": 25600
+          },
+          "gold": 192000,
+          "seconds": 76800,
+          "effect": {
+            "type": "production_stone",
+            "per_level": 0.1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 2,
+          "building_requirements": {
+            "quarry": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 1
+          },
+          "cost": {
+            "stone": 128000,
+            "iron": 51200
+          },
+          "gold": 384000,
+          "seconds": 153600,
+          "effect": {
+            "type": "production_stone",
+            "per_level": 0.1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 2,
+          "building_requirements": {
+            "quarry": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 1
+          },
+          "cost": {
+            "stone": 256000,
+            "iron": 102400
+          },
+          "gold": 768000,
+          "seconds": 307200,
+          "effect": {
+            "type": "production_stone",
+            "per_level": 0.1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "mining": {
+      "name": "Mining",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 2,
+          "building_requirements": {
+            "ironmine": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "masonry": 1
+          },
+          "cost": {
+            "iron": 800
+          },
+          "gold": 2000,
+          "seconds": 700,
+          "effect": {
+            "type": "production_iron",
+            "per_level": 0.1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 2,
+          "building_requirements": {
+            "ironmine": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "masonry": 1
+          },
+          "cost": {
+            "iron": 1600
+          },
+          "gold": 4000,
+          "seconds": 1400,
+          "effect": {
+            "type": "production_iron",
+            "per_level": 0.1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 2,
+          "building_requirements": {
+            "ironmine": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "masonry": 1
+          },
+          "cost": {
+            "iron": 3200
+          },
+          "gold": 8000,
+          "seconds": 2800,
+          "effect": {
+            "type": "production_iron",
+            "per_level": 0.1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 2,
+          "building_requirements": {
+            "ironmine": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "masonry": 1
+          },
+          "cost": {
+            "iron": 6400
+          },
+          "gold": 16000,
+          "seconds": 5600,
+          "effect": {
+            "type": "production_iron",
+            "per_level": 0.1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 2,
+          "building_requirements": {
+            "ironmine": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "masonry": 1
+          },
+          "cost": {
+            "iron": 12800
+          },
+          "gold": 32000,
+          "seconds": 11200,
+          "effect": {
+            "type": "production_iron",
+            "per_level": 0.1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 2,
+          "building_requirements": {
+            "ironmine": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "masonry": 1
+          },
+          "cost": {
+            "iron": 25600
+          },
+          "gold": 64000,
+          "seconds": 22400,
+          "effect": {
+            "type": "production_iron",
+            "per_level": 0.1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 2,
+          "building_requirements": {
+            "ironmine": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "masonry": 1
+          },
+          "cost": {
+            "iron": 51200
+          },
+          "gold": 128000,
+          "seconds": 44800,
+          "effect": {
+            "type": "production_iron",
+            "per_level": 0.1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 2,
+          "building_requirements": {
+            "ironmine": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "masonry": 1
+          },
+          "cost": {
+            "iron": 102400
+          },
+          "gold": 256000,
+          "seconds": 89600,
+          "effect": {
+            "type": "production_iron",
+            "per_level": 0.1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 2,
+          "building_requirements": {
+            "ironmine": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "masonry": 1
+          },
+          "cost": {
+            "iron": 204800
+          },
+          "gold": 512000,
+          "seconds": 179200,
+          "effect": {
+            "type": "production_iron",
+            "per_level": 0.1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 2,
+          "building_requirements": {
+            "ironmine": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "masonry": 1
+          },
+          "cost": {
+            "iron": 409600
+          },
+          "gold": 1024000,
+          "seconds": 358400,
+          "effect": {
+            "type": "production_iron",
+            "per_level": 0.1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "metal_casting": {
+      "name": "Metal Casting",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 3,
+          "building_requirements": {
+            "workshop": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "mining": 2
+          },
+          "cost": {
+            "lumber": 500,
+            "iron": 500
+          },
+          "gold": 5000,
+          "seconds": 900,
+          "effect": {
+            "type": "mechanic_training_speed",
+            "per_level": 0.1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 3,
+          "building_requirements": {
+            "workshop": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "mining": 2
+          },
+          "cost": {
+            "lumber": 1000,
+            "iron": 1000
+          },
+          "gold": 10000,
+          "seconds": 1800,
+          "effect": {
+            "type": "mechanic_training_speed",
+            "per_level": 0.1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 3,
+          "building_requirements": {
+            "workshop": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "mining": 2
+          },
+          "cost": {
+            "lumber": 2000,
+            "iron": 2000
+          },
+          "gold": 20000,
+          "seconds": 3600,
+          "effect": {
+            "type": "mechanic_training_speed",
+            "per_level": 0.1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 3,
+          "building_requirements": {
+            "workshop": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "mining": 2
+          },
+          "cost": {
+            "lumber": 4000,
+            "iron": 4000
+          },
+          "gold": 40000,
+          "seconds": 7200,
+          "effect": {
+            "type": "mechanic_training_speed",
+            "per_level": 0.1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 3,
+          "building_requirements": {
+            "workshop": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "mining": 2
+          },
+          "cost": {
+            "lumber": 8000,
+            "iron": 8000
+          },
+          "gold": 80000,
+          "seconds": 14400,
+          "effect": {
+            "type": "mechanic_training_speed",
+            "per_level": 0.1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 3,
+          "building_requirements": {
+            "workshop": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "mining": 2
+          },
+          "cost": {
+            "lumber": 16000,
+            "iron": 16000
+          },
+          "gold": 160000,
+          "seconds": 28800,
+          "effect": {
+            "type": "mechanic_training_speed",
+            "per_level": 0.1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 3,
+          "building_requirements": {
+            "workshop": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "mining": 2
+          },
+          "cost": {
+            "lumber": 32000,
+            "iron": 32000
+          },
+          "gold": 320000,
+          "seconds": 57600,
+          "effect": {
+            "type": "mechanic_training_speed",
+            "per_level": 0.1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 3,
+          "building_requirements": {
+            "workshop": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "mining": 2
+          },
+          "cost": {
+            "lumber": 64000,
+            "iron": 64000
+          },
+          "gold": 640000,
+          "seconds": 115200,
+          "effect": {
+            "type": "mechanic_training_speed",
+            "per_level": 0.1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 3,
+          "building_requirements": {
+            "workshop": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "mining": 2
+          },
+          "cost": {
+            "lumber": 128000,
+            "iron": 128000
+          },
+          "gold": 1280000,
+          "seconds": 230400,
+          "effect": {
+            "type": "mechanic_training_speed",
+            "per_level": 0.1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 3,
+          "building_requirements": {
+            "workshop": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "mining": 2
+          },
+          "cost": {
+            "lumber": 256000,
+            "iron": 256000
+          },
+          "gold": 2560000,
+          "seconds": 460800,
+          "effect": {
+            "type": "mechanic_training_speed",
+            "per_level": 0.1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "informatics": {
+      "name": "Informatics",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {},
+          "cost": {
+            "food": 300
+          },
+          "gold": 2000,
+          "seconds": 300,
+          "effect": {
+            "type": "scouting_detail",
+            "per_level": 1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {},
+          "cost": {
+            "food": 600
+          },
+          "gold": 4000,
+          "seconds": 600,
+          "effect": {
+            "type": "scouting_detail",
+            "per_level": 1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {},
+          "cost": {
+            "food": 1200
+          },
+          "gold": 8000,
+          "seconds": 1200,
+          "effect": {
+            "type": "scouting_detail",
+            "per_level": 1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {},
+          "cost": {
+            "food": 2400
+          },
+          "gold": 16000,
+          "seconds": 2400,
+          "effect": {
+            "type": "scouting_detail",
+            "per_level": 1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {},
+          "cost": {
+            "food": 4800
+          },
+          "gold": 32000,
+          "seconds": 4800,
+          "effect": {
+            "type": "scouting_detail",
+            "per_level": 1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {},
+          "cost": {
+            "food": 9600
+          },
+          "gold": 64000,
+          "seconds": 9600,
+          "effect": {
+            "type": "scouting_detail",
+            "per_level": 1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {},
+          "cost": {
+            "food": 19200
+          },
+          "gold": 128000,
+          "seconds": 19200,
+          "effect": {
+            "type": "scouting_detail",
+            "per_level": 1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {},
+          "cost": {
+            "food": 38400
+          },
+          "gold": 256000,
+          "seconds": 38400,
+          "effect": {
+            "type": "scouting_detail",
+            "per_level": 1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {},
+          "cost": {
+            "food": 76800
+          },
+          "gold": 512000,
+          "seconds": 76800,
+          "effect": {
+            "type": "scouting_detail",
+            "per_level": 1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {},
+          "cost": {
+            "food": 153600
+          },
+          "gold": 1024000,
+          "seconds": 153600,
+          "effect": {
+            "type": "scouting_detail",
+            "per_level": 1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "military_science": {
+      "name": "Military Science",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 1,
+          "building_requirements": {
+            "forge": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 600,
+            "lumber": 100,
+            "stone": 100,
+            "iron": 150
+          },
+          "gold": 2500,
+          "seconds": 900,
+          "effect": {
+            "type": "troop_training_time_factor",
+            "per_level": 0.9,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 1,
+          "building_requirements": {
+            "forge": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 1200,
+            "lumber": 200,
+            "stone": 200,
+            "iron": 300
+          },
+          "gold": 5000,
+          "seconds": 1800,
+          "effect": {
+            "type": "troop_training_time_factor",
+            "per_level": 0.9,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 1,
+          "building_requirements": {
+            "forge": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 2400,
+            "lumber": 400,
+            "stone": 400,
+            "iron": 600
+          },
+          "gold": 10000,
+          "seconds": 3600,
+          "effect": {
+            "type": "troop_training_time_factor",
+            "per_level": 0.9,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 1,
+          "building_requirements": {
+            "forge": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 4800,
+            "lumber": 800,
+            "stone": 800,
+            "iron": 1200
+          },
+          "gold": 20000,
+          "seconds": 7200,
+          "effect": {
+            "type": "troop_training_time_factor",
+            "per_level": 0.9,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 1,
+          "building_requirements": {
+            "forge": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 9600,
+            "lumber": 1600,
+            "stone": 1600,
+            "iron": 2400
+          },
+          "gold": 40000,
+          "seconds": 14400,
+          "effect": {
+            "type": "troop_training_time_factor",
+            "per_level": 0.9,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 1,
+          "building_requirements": {
+            "forge": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 19200,
+            "lumber": 3200,
+            "stone": 3200,
+            "iron": 4800
+          },
+          "gold": 80000,
+          "seconds": 28800,
+          "effect": {
+            "type": "troop_training_time_factor",
+            "per_level": 0.9,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 1,
+          "building_requirements": {
+            "forge": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 38400,
+            "lumber": 6400,
+            "stone": 6400,
+            "iron": 9600
+          },
+          "gold": 160000,
+          "seconds": 57600,
+          "effect": {
+            "type": "troop_training_time_factor",
+            "per_level": 0.9,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 1,
+          "building_requirements": {
+            "forge": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 76800,
+            "lumber": 12800,
+            "stone": 12800,
+            "iron": 19200
+          },
+          "gold": 320000,
+          "seconds": 115200,
+          "effect": {
+            "type": "troop_training_time_factor",
+            "per_level": 0.9,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 1,
+          "building_requirements": {
+            "forge": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 153600,
+            "lumber": 25600,
+            "stone": 25600,
+            "iron": 38400
+          },
+          "gold": 640000,
+          "seconds": 230400,
+          "effect": {
+            "type": "troop_training_time_factor",
+            "per_level": 0.9,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 1,
+          "building_requirements": {
+            "forge": "TARGET_LEVEL"
+          },
+          "technology_requirements": {},
+          "cost": {
+            "food": 307200,
+            "lumber": 51200,
+            "stone": 51200,
+            "iron": 76800
+          },
+          "gold": 1280000,
+          "seconds": 460800,
+          "effect": {
+            "type": "troop_training_time_factor",
+            "per_level": 0.9,
+            "level": 10
+          }
+        }
+      }
+    },
+    "military_tradition": {
+      "name": "Military Tradition",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 2,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 1
+          },
+          "cost": {
+            "food": 800,
+            "lumber": 120,
+            "iron": 200
+          },
+          "gold": 3000,
+          "seconds": 1200,
+          "effect": {
+            "type": "troop_attack",
+            "per_level": 0.05,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 2,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 1
+          },
+          "cost": {
+            "food": 1600,
+            "lumber": 240,
+            "iron": 400
+          },
+          "gold": 6000,
+          "seconds": 2400,
+          "effect": {
+            "type": "troop_attack",
+            "per_level": 0.05,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 2,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 1
+          },
+          "cost": {
+            "food": 3200,
+            "lumber": 480,
+            "iron": 800
+          },
+          "gold": 12000,
+          "seconds": 4800,
+          "effect": {
+            "type": "troop_attack",
+            "per_level": 0.05,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 2,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 1
+          },
+          "cost": {
+            "food": 6400,
+            "lumber": 960,
+            "iron": 1600
+          },
+          "gold": 24000,
+          "seconds": 9600,
+          "effect": {
+            "type": "troop_attack",
+            "per_level": 0.05,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 2,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 1
+          },
+          "cost": {
+            "food": 12800,
+            "lumber": 1920,
+            "iron": 3200
+          },
+          "gold": 48000,
+          "seconds": 19200,
+          "effect": {
+            "type": "troop_attack",
+            "per_level": 0.05,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 2,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 1
+          },
+          "cost": {
+            "food": 25600,
+            "lumber": 3840,
+            "iron": 6400
+          },
+          "gold": 96000,
+          "seconds": 38400,
+          "effect": {
+            "type": "troop_attack",
+            "per_level": 0.05,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 2,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 1
+          },
+          "cost": {
+            "food": 51200,
+            "lumber": 7680,
+            "iron": 12800
+          },
+          "gold": 192000,
+          "seconds": 76800,
+          "effect": {
+            "type": "troop_attack",
+            "per_level": 0.05,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 2,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 1
+          },
+          "cost": {
+            "food": 102400,
+            "lumber": 15360,
+            "iron": 25600
+          },
+          "gold": 384000,
+          "seconds": 153600,
+          "effect": {
+            "type": "troop_attack",
+            "per_level": 0.05,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 2,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 1
+          },
+          "cost": {
+            "food": 204800,
+            "lumber": 30720,
+            "iron": 51200
+          },
+          "gold": 768000,
+          "seconds": 307200,
+          "effect": {
+            "type": "troop_attack",
+            "per_level": 0.05,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 2,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 1
+          },
+          "cost": {
+            "food": 409600,
+            "lumber": 61440,
+            "iron": 102400
+          },
+          "gold": 1536000,
+          "seconds": 614400,
+          "effect": {
+            "type": "troop_attack",
+            "per_level": 0.05,
+            "level": 10
+          }
+        }
+      }
+    },
+    "iron_working": {
+      "name": "Iron Working",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 700,
+            "lumber": 150,
+            "iron": 300
+          },
+          "gold": 3500,
+          "seconds": 1500,
+          "effect": {
+            "type": "troop_defense",
+            "per_level": 0.05,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 1400,
+            "lumber": 300,
+            "iron": 600
+          },
+          "gold": 7000,
+          "seconds": 3000,
+          "effect": {
+            "type": "troop_defense",
+            "per_level": 0.05,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 2800,
+            "lumber": 600,
+            "iron": 1200
+          },
+          "gold": 14000,
+          "seconds": 6000,
+          "effect": {
+            "type": "troop_defense",
+            "per_level": 0.05,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 5600,
+            "lumber": 1200,
+            "iron": 2400
+          },
+          "gold": 28000,
+          "seconds": 12000,
+          "effect": {
+            "type": "troop_defense",
+            "per_level": 0.05,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 11200,
+            "lumber": 2400,
+            "iron": 4800
+          },
+          "gold": 56000,
+          "seconds": 24000,
+          "effect": {
+            "type": "troop_defense",
+            "per_level": 0.05,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 22400,
+            "lumber": 4800,
+            "iron": 9600
+          },
+          "gold": 112000,
+          "seconds": 48000,
+          "effect": {
+            "type": "troop_defense",
+            "per_level": 0.05,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 44800,
+            "lumber": 9600,
+            "iron": 19200
+          },
+          "gold": 224000,
+          "seconds": 96000,
+          "effect": {
+            "type": "troop_defense",
+            "per_level": 0.05,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 89600,
+            "lumber": 19200,
+            "iron": 38400
+          },
+          "gold": 448000,
+          "seconds": 192000,
+          "effect": {
+            "type": "troop_defense",
+            "per_level": 0.05,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 179200,
+            "lumber": 38400,
+            "iron": 76800
+          },
+          "gold": 896000,
+          "seconds": 384000,
+          "effect": {
+            "type": "troop_defense",
+            "per_level": 0.05,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 3,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 358400,
+            "lumber": 76800,
+            "iron": 153600
+          },
+          "gold": 1792000,
+          "seconds": 768000,
+          "effect": {
+            "type": "troop_defense",
+            "per_level": 0.05,
+            "level": 10
+          }
+        }
+      }
+    },
+    "logistics": {
+      "name": "Logistics",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 500,
+            "stone": 200
+          },
+          "gold": 3000,
+          "seconds": 1600,
+          "effect": {
+            "type": "troop_load",
+            "per_level": 0.1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 1000,
+            "stone": 400
+          },
+          "gold": 6000,
+          "seconds": 3200,
+          "effect": {
+            "type": "troop_load",
+            "per_level": 0.1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 2000,
+            "stone": 800
+          },
+          "gold": 12000,
+          "seconds": 6400,
+          "effect": {
+            "type": "troop_load",
+            "per_level": 0.1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 4000,
+            "stone": 1600
+          },
+          "gold": 24000,
+          "seconds": 12800,
+          "effect": {
+            "type": "troop_load",
+            "per_level": 0.1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 8000,
+            "stone": 3200
+          },
+          "gold": 48000,
+          "seconds": 25600,
+          "effect": {
+            "type": "troop_load",
+            "per_level": 0.1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 16000,
+            "stone": 6400
+          },
+          "gold": 96000,
+          "seconds": 51200,
+          "effect": {
+            "type": "troop_load",
+            "per_level": 0.1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 32000,
+            "stone": 12800
+          },
+          "gold": 192000,
+          "seconds": 102400,
+          "effect": {
+            "type": "troop_load",
+            "per_level": 0.1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 64000,
+            "stone": 25600
+          },
+          "gold": 384000,
+          "seconds": 204800,
+          "effect": {
+            "type": "troop_load",
+            "per_level": 0.1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 128000,
+            "stone": 51200
+          },
+          "gold": 768000,
+          "seconds": 409600,
+          "effect": {
+            "type": "troop_load",
+            "per_level": 0.1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 2
+          },
+          "cost": {
+            "food": 256000,
+            "stone": 102400
+          },
+          "gold": 1536000,
+          "seconds": 819200,
+          "effect": {
+            "type": "troop_load",
+            "per_level": 0.1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "compass": {
+      "name": "Compass",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 3
+          },
+          "cost": {
+            "food": 600
+          },
+          "gold": 3000,
+          "seconds": 1800,
+          "effect": {
+            "type": "infantry_speed",
+            "per_level": 0.1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 3
+          },
+          "cost": {
+            "food": 1200
+          },
+          "gold": 6000,
+          "seconds": 3600,
+          "effect": {
+            "type": "infantry_speed",
+            "per_level": 0.1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 3
+          },
+          "cost": {
+            "food": 2400
+          },
+          "gold": 12000,
+          "seconds": 7200,
+          "effect": {
+            "type": "infantry_speed",
+            "per_level": 0.1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 3
+          },
+          "cost": {
+            "food": 4800
+          },
+          "gold": 24000,
+          "seconds": 14400,
+          "effect": {
+            "type": "infantry_speed",
+            "per_level": 0.1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 3
+          },
+          "cost": {
+            "food": 9600
+          },
+          "gold": 48000,
+          "seconds": 28800,
+          "effect": {
+            "type": "infantry_speed",
+            "per_level": 0.1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 3
+          },
+          "cost": {
+            "food": 19200
+          },
+          "gold": 96000,
+          "seconds": 57600,
+          "effect": {
+            "type": "infantry_speed",
+            "per_level": 0.1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 3
+          },
+          "cost": {
+            "food": 38400
+          },
+          "gold": 192000,
+          "seconds": 115200,
+          "effect": {
+            "type": "infantry_speed",
+            "per_level": 0.1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 3
+          },
+          "cost": {
+            "food": 76800
+          },
+          "gold": 384000,
+          "seconds": 230400,
+          "effect": {
+            "type": "infantry_speed",
+            "per_level": 0.1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 3
+          },
+          "cost": {
+            "food": 153600
+          },
+          "gold": 768000,
+          "seconds": 460800,
+          "effect": {
+            "type": "infantry_speed",
+            "per_level": 0.1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 3
+          },
+          "cost": {
+            "food": 307200
+          },
+          "gold": 1536000,
+          "seconds": 921600,
+          "effect": {
+            "type": "infantry_speed",
+            "per_level": 0.1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "horseback_riding": {
+      "name": "Horseback Riding",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 5,
+          "building_requirements": {
+            "stable": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "military_science": 5
+          },
+          "cost": {
+            "food": 1000
+          },
+          "gold": 6000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "cavalry_mechanic_speed",
+            "per_level": 0.05,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 5,
+          "building_requirements": {
+            "stable": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "military_science": 5
+          },
+          "cost": {
+            "food": 2000
+          },
+          "gold": 12000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "cavalry_mechanic_speed",
+            "per_level": 0.05,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 5,
+          "building_requirements": {
+            "stable": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "military_science": 5
+          },
+          "cost": {
+            "food": 4000
+          },
+          "gold": 24000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "cavalry_mechanic_speed",
+            "per_level": 0.05,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 5,
+          "building_requirements": {
+            "stable": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "military_science": 5
+          },
+          "cost": {
+            "food": 8000
+          },
+          "gold": 48000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "cavalry_mechanic_speed",
+            "per_level": 0.05,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 5,
+          "building_requirements": {
+            "stable": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "military_science": 5
+          },
+          "cost": {
+            "food": 16000
+          },
+          "gold": 96000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "cavalry_mechanic_speed",
+            "per_level": 0.05,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 5,
+          "building_requirements": {
+            "stable": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "military_science": 5
+          },
+          "cost": {
+            "food": 32000
+          },
+          "gold": 192000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "cavalry_mechanic_speed",
+            "per_level": 0.05,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 5,
+          "building_requirements": {
+            "stable": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "military_science": 5
+          },
+          "cost": {
+            "food": 64000
+          },
+          "gold": 384000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "cavalry_mechanic_speed",
+            "per_level": 0.05,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 5,
+          "building_requirements": {
+            "stable": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "military_science": 5
+          },
+          "cost": {
+            "food": 128000
+          },
+          "gold": 768000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "cavalry_mechanic_speed",
+            "per_level": 0.05,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 5,
+          "building_requirements": {
+            "stable": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "military_science": 5
+          },
+          "cost": {
+            "food": 256000
+          },
+          "gold": 1536000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "cavalry_mechanic_speed",
+            "per_level": 0.05,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 5,
+          "building_requirements": {
+            "stable": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "military_science": 5
+          },
+          "cost": {
+            "food": 512000
+          },
+          "gold": 3072000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "cavalry_mechanic_speed",
+            "per_level": 0.05,
+            "level": 10
+          }
+        }
+      }
+    },
+    "archery": {
+      "name": "Archery",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 4
+          },
+          "cost": {
+            "lumber": 800,
+            "stone": 500,
+            "iron": 600
+          },
+          "gold": 5000,
+          "seconds": 2400,
+          "effect": {
+            "type": "ranged_range",
+            "per_level": 0.05,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 4
+          },
+          "cost": {
+            "lumber": 1600,
+            "stone": 1000,
+            "iron": 1200
+          },
+          "gold": 10000,
+          "seconds": 4800,
+          "effect": {
+            "type": "ranged_range",
+            "per_level": 0.05,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 4
+          },
+          "cost": {
+            "lumber": 3200,
+            "stone": 2000,
+            "iron": 2400
+          },
+          "gold": 20000,
+          "seconds": 9600,
+          "effect": {
+            "type": "ranged_range",
+            "per_level": 0.05,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 4
+          },
+          "cost": {
+            "lumber": 6400,
+            "stone": 4000,
+            "iron": 4800
+          },
+          "gold": 40000,
+          "seconds": 19200,
+          "effect": {
+            "type": "ranged_range",
+            "per_level": 0.05,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 4
+          },
+          "cost": {
+            "lumber": 12800,
+            "stone": 8000,
+            "iron": 9600
+          },
+          "gold": 80000,
+          "seconds": 38400,
+          "effect": {
+            "type": "ranged_range",
+            "per_level": 0.05,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 4
+          },
+          "cost": {
+            "lumber": 25600,
+            "stone": 16000,
+            "iron": 19200
+          },
+          "gold": 160000,
+          "seconds": 76800,
+          "effect": {
+            "type": "ranged_range",
+            "per_level": 0.05,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 4
+          },
+          "cost": {
+            "lumber": 51200,
+            "stone": 32000,
+            "iron": 38400
+          },
+          "gold": 320000,
+          "seconds": 153600,
+          "effect": {
+            "type": "ranged_range",
+            "per_level": 0.05,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 4
+          },
+          "cost": {
+            "lumber": 102400,
+            "stone": 64000,
+            "iron": 76800
+          },
+          "gold": 640000,
+          "seconds": 307200,
+          "effect": {
+            "type": "ranged_range",
+            "per_level": 0.05,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 4
+          },
+          "cost": {
+            "lumber": 204800,
+            "stone": 128000,
+            "iron": 153600
+          },
+          "gold": 1280000,
+          "seconds": 614400,
+          "effect": {
+            "type": "ranged_range",
+            "per_level": 0.05,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 4,
+          "building_requirements": {},
+          "technology_requirements": {
+            "military_science": 4
+          },
+          "cost": {
+            "lumber": 409600,
+            "stone": 256000,
+            "iron": 307200
+          },
+          "gold": 2560000,
+          "seconds": 1228800,
+          "effect": {
+            "type": "ranged_range",
+            "per_level": 0.05,
+            "level": 10
+          }
+        }
+      }
+    },
+    "stockpile": {
+      "name": "Stockpile",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 6,
+          "building_requirements": {
+            "warehouse": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 3
+          },
+          "cost": {
+            "lumber": 1200,
+            "stone": 1000,
+            "iron": 800
+          },
+          "gold": 2000,
+          "seconds": 900,
+          "effect": {
+            "type": "warehouse_capacity",
+            "per_level": 0.1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 6,
+          "building_requirements": {
+            "warehouse": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 3
+          },
+          "cost": {
+            "lumber": 2400,
+            "stone": 2000,
+            "iron": 1600
+          },
+          "gold": 4000,
+          "seconds": 1800,
+          "effect": {
+            "type": "warehouse_capacity",
+            "per_level": 0.1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 6,
+          "building_requirements": {
+            "warehouse": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 3
+          },
+          "cost": {
+            "lumber": 4800,
+            "stone": 4000,
+            "iron": 3200
+          },
+          "gold": 8000,
+          "seconds": 3600,
+          "effect": {
+            "type": "warehouse_capacity",
+            "per_level": 0.1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 6,
+          "building_requirements": {
+            "warehouse": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 3
+          },
+          "cost": {
+            "lumber": 9600,
+            "stone": 8000,
+            "iron": 6400
+          },
+          "gold": 16000,
+          "seconds": 7200,
+          "effect": {
+            "type": "warehouse_capacity",
+            "per_level": 0.1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 6,
+          "building_requirements": {
+            "warehouse": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 3
+          },
+          "cost": {
+            "lumber": 19200,
+            "stone": 16000,
+            "iron": 12800
+          },
+          "gold": 32000,
+          "seconds": 14400,
+          "effect": {
+            "type": "warehouse_capacity",
+            "per_level": 0.1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 6,
+          "building_requirements": {
+            "warehouse": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 3
+          },
+          "cost": {
+            "lumber": 38400,
+            "stone": 32000,
+            "iron": 25600
+          },
+          "gold": 64000,
+          "seconds": 28800,
+          "effect": {
+            "type": "warehouse_capacity",
+            "per_level": 0.1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 6,
+          "building_requirements": {
+            "warehouse": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 3
+          },
+          "cost": {
+            "lumber": 76800,
+            "stone": 64000,
+            "iron": 51200
+          },
+          "gold": 128000,
+          "seconds": 57600,
+          "effect": {
+            "type": "warehouse_capacity",
+            "per_level": 0.1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 6,
+          "building_requirements": {
+            "warehouse": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 3
+          },
+          "cost": {
+            "lumber": 153600,
+            "stone": 128000,
+            "iron": 102400
+          },
+          "gold": 256000,
+          "seconds": 115200,
+          "effect": {
+            "type": "warehouse_capacity",
+            "per_level": 0.1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 6,
+          "building_requirements": {
+            "warehouse": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 3
+          },
+          "cost": {
+            "lumber": 307200,
+            "stone": 256000,
+            "iron": 204800
+          },
+          "gold": 512000,
+          "seconds": 230400,
+          "effect": {
+            "type": "warehouse_capacity",
+            "per_level": 0.1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 6,
+          "building_requirements": {
+            "warehouse": "TARGET_LEVEL"
+          },
+          "technology_requirements": {
+            "lumbering": 3
+          },
+          "cost": {
+            "lumber": 614400,
+            "stone": 512000,
+            "iron": 409600
+          },
+          "gold": 1024000,
+          "seconds": 460800,
+          "effect": {
+            "type": "warehouse_capacity",
+            "per_level": 0.1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "medicine": {
+      "name": "Medicine",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 6,
+          "building_requirements": {},
+          "technology_requirements": {
+            "logistics": 3
+          },
+          "cost": {
+            "food": 1500
+          },
+          "gold": 3600,
+          "seconds": 1800,
+          "effect": {
+            "type": "troop_life",
+            "per_level": 0.05,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 6,
+          "building_requirements": {},
+          "technology_requirements": {
+            "logistics": 3
+          },
+          "cost": {
+            "food": 3000
+          },
+          "gold": 7200,
+          "seconds": 3600,
+          "effect": {
+            "type": "troop_life",
+            "per_level": 0.05,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 6,
+          "building_requirements": {},
+          "technology_requirements": {
+            "logistics": 3
+          },
+          "cost": {
+            "food": 6000
+          },
+          "gold": 14400,
+          "seconds": 7200,
+          "effect": {
+            "type": "troop_life",
+            "per_level": 0.05,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 6,
+          "building_requirements": {},
+          "technology_requirements": {
+            "logistics": 3
+          },
+          "cost": {
+            "food": 12000
+          },
+          "gold": 28800,
+          "seconds": 14400,
+          "effect": {
+            "type": "troop_life",
+            "per_level": 0.05,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 6,
+          "building_requirements": {},
+          "technology_requirements": {
+            "logistics": 3
+          },
+          "cost": {
+            "food": 24000
+          },
+          "gold": 57600,
+          "seconds": 28800,
+          "effect": {
+            "type": "troop_life",
+            "per_level": 0.05,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 6,
+          "building_requirements": {},
+          "technology_requirements": {
+            "logistics": 3
+          },
+          "cost": {
+            "food": 48000
+          },
+          "gold": 115200,
+          "seconds": 57600,
+          "effect": {
+            "type": "troop_life",
+            "per_level": 0.05,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 6,
+          "building_requirements": {},
+          "technology_requirements": {
+            "logistics": 3
+          },
+          "cost": {
+            "food": 96000
+          },
+          "gold": 230400,
+          "seconds": 115200,
+          "effect": {
+            "type": "troop_life",
+            "per_level": 0.05,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 6,
+          "building_requirements": {},
+          "technology_requirements": {
+            "logistics": 3
+          },
+          "cost": {
+            "food": 192000
+          },
+          "gold": 460800,
+          "seconds": 230400,
+          "effect": {
+            "type": "troop_life",
+            "per_level": 0.05,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 6,
+          "building_requirements": {},
+          "technology_requirements": {
+            "logistics": 3
+          },
+          "cost": {
+            "food": 384000
+          },
+          "gold": 921600,
+          "seconds": 460800,
+          "effect": {
+            "type": "troop_life",
+            "per_level": 0.05,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 6,
+          "building_requirements": {},
+          "technology_requirements": {
+            "logistics": 3
+          },
+          "cost": {
+            "food": 768000
+          },
+          "gold": 1843200,
+          "seconds": 921600,
+          "effect": {
+            "type": "troop_life",
+            "per_level": 0.05,
+            "level": 10
+          }
+        }
+      }
+    },
+    "construction": {
+      "name": "Construction",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 5,
+          "building_requirements": {},
+          "technology_requirements": {
+            "lumbering": 5,
+            "metal_casting": 2
+          },
+          "cost": {
+            "lumber": 2000,
+            "stone": 2000,
+            "iron": 2000
+          },
+          "gold": 5000,
+          "seconds": 1540,
+          "effect": {
+            "type": "construction_time_factor",
+            "per_level": 0.9,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 5,
+          "building_requirements": {},
+          "technology_requirements": {
+            "lumbering": 5,
+            "metal_casting": 2
+          },
+          "cost": {
+            "lumber": 4000,
+            "stone": 4000,
+            "iron": 4000
+          },
+          "gold": 10000,
+          "seconds": 3080,
+          "effect": {
+            "type": "construction_time_factor",
+            "per_level": 0.9,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 5,
+          "building_requirements": {},
+          "technology_requirements": {
+            "lumbering": 5,
+            "metal_casting": 2
+          },
+          "cost": {
+            "lumber": 8000,
+            "stone": 8000,
+            "iron": 8000
+          },
+          "gold": 20000,
+          "seconds": 6160,
+          "effect": {
+            "type": "construction_time_factor",
+            "per_level": 0.9,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 5,
+          "building_requirements": {},
+          "technology_requirements": {
+            "lumbering": 5,
+            "metal_casting": 2
+          },
+          "cost": {
+            "lumber": 16000,
+            "stone": 16000,
+            "iron": 16000
+          },
+          "gold": 40000,
+          "seconds": 12320,
+          "effect": {
+            "type": "construction_time_factor",
+            "per_level": 0.9,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 5,
+          "building_requirements": {},
+          "technology_requirements": {
+            "lumbering": 5,
+            "metal_casting": 2
+          },
+          "cost": {
+            "lumber": 32000,
+            "stone": 32000,
+            "iron": 32000
+          },
+          "gold": 80000,
+          "seconds": 24640,
+          "effect": {
+            "type": "construction_time_factor",
+            "per_level": 0.9,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 5,
+          "building_requirements": {},
+          "technology_requirements": {
+            "lumbering": 5,
+            "metal_casting": 2
+          },
+          "cost": {
+            "lumber": 64000,
+            "stone": 64000,
+            "iron": 64000
+          },
+          "gold": 160000,
+          "seconds": 49280,
+          "effect": {
+            "type": "construction_time_factor",
+            "per_level": 0.9,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 5,
+          "building_requirements": {},
+          "technology_requirements": {
+            "lumbering": 5,
+            "metal_casting": 2
+          },
+          "cost": {
+            "lumber": 128000,
+            "stone": 128000,
+            "iron": 128000
+          },
+          "gold": 320000,
+          "seconds": 98560,
+          "effect": {
+            "type": "construction_time_factor",
+            "per_level": 0.9,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 5,
+          "building_requirements": {},
+          "technology_requirements": {
+            "lumbering": 5,
+            "metal_casting": 2
+          },
+          "cost": {
+            "lumber": 256000,
+            "stone": 256000,
+            "iron": 256000
+          },
+          "gold": 640000,
+          "seconds": 197120,
+          "effect": {
+            "type": "construction_time_factor",
+            "per_level": 0.9,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 5,
+          "building_requirements": {},
+          "technology_requirements": {
+            "lumbering": 5,
+            "metal_casting": 2
+          },
+          "cost": {
+            "lumber": 512000,
+            "stone": 512000,
+            "iron": 512000
+          },
+          "gold": 1280000,
+          "seconds": 394240,
+          "effect": {
+            "type": "construction_time_factor",
+            "per_level": 0.9,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 5,
+          "building_requirements": {},
+          "technology_requirements": {
+            "lumbering": 5,
+            "metal_casting": 2
+          },
+          "cost": {
+            "lumber": 1024000,
+            "stone": 1024000,
+            "iron": 1024000
+          },
+          "gold": 2560000,
+          "seconds": 788480,
+          "effect": {
+            "type": "construction_time_factor",
+            "per_level": 0.9,
+            "level": 10
+          }
+        }
+      }
+    },
+    "engineering": {
+      "name": "Engineering",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 8,
+          "building_requirements": {},
+          "technology_requirements": {
+            "construction": 3
+          },
+          "cost": {
+            "lumber": 2500,
+            "stone": 3000,
+            "iron": 1500
+          },
+          "gold": 6000,
+          "seconds": 2100,
+          "effect": {
+            "type": "wall_fort_life",
+            "per_level": 0.1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 8,
+          "building_requirements": {},
+          "technology_requirements": {
+            "construction": 3
+          },
+          "cost": {
+            "lumber": 5000,
+            "stone": 6000,
+            "iron": 3000
+          },
+          "gold": 12000,
+          "seconds": 4200,
+          "effect": {
+            "type": "wall_fort_life",
+            "per_level": 0.1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 8,
+          "building_requirements": {},
+          "technology_requirements": {
+            "construction": 3
+          },
+          "cost": {
+            "lumber": 10000,
+            "stone": 12000,
+            "iron": 6000
+          },
+          "gold": 24000,
+          "seconds": 8400,
+          "effect": {
+            "type": "wall_fort_life",
+            "per_level": 0.1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 8,
+          "building_requirements": {},
+          "technology_requirements": {
+            "construction": 3
+          },
+          "cost": {
+            "lumber": 20000,
+            "stone": 24000,
+            "iron": 12000
+          },
+          "gold": 48000,
+          "seconds": 16800,
+          "effect": {
+            "type": "wall_fort_life",
+            "per_level": 0.1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 8,
+          "building_requirements": {},
+          "technology_requirements": {
+            "construction": 3
+          },
+          "cost": {
+            "lumber": 40000,
+            "stone": 48000,
+            "iron": 24000
+          },
+          "gold": 96000,
+          "seconds": 33600,
+          "effect": {
+            "type": "wall_fort_life",
+            "per_level": 0.1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 8,
+          "building_requirements": {},
+          "technology_requirements": {
+            "construction": 3
+          },
+          "cost": {
+            "lumber": 80000,
+            "stone": 96000,
+            "iron": 48000
+          },
+          "gold": 192000,
+          "seconds": 67200,
+          "effect": {
+            "type": "wall_fort_life",
+            "per_level": 0.1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 8,
+          "building_requirements": {},
+          "technology_requirements": {
+            "construction": 3
+          },
+          "cost": {
+            "lumber": 160000,
+            "stone": 192000,
+            "iron": 96000
+          },
+          "gold": 384000,
+          "seconds": 134400,
+          "effect": {
+            "type": "wall_fort_life",
+            "per_level": 0.1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 8,
+          "building_requirements": {},
+          "technology_requirements": {
+            "construction": 3
+          },
+          "cost": {
+            "lumber": 320000,
+            "stone": 384000,
+            "iron": 192000
+          },
+          "gold": 768000,
+          "seconds": 268800,
+          "effect": {
+            "type": "wall_fort_life",
+            "per_level": 0.1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 8,
+          "building_requirements": {},
+          "technology_requirements": {
+            "construction": 3
+          },
+          "cost": {
+            "lumber": 640000,
+            "stone": 768000,
+            "iron": 384000
+          },
+          "gold": 1536000,
+          "seconds": 537600,
+          "effect": {
+            "type": "wall_fort_life",
+            "per_level": 0.1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 8,
+          "building_requirements": {},
+          "technology_requirements": {
+            "construction": 3
+          },
+          "cost": {
+            "lumber": 1280000,
+            "stone": 1536000,
+            "iron": 768000
+          },
+          "gold": 3072000,
+          "seconds": 1075200,
+          "effect": {
+            "type": "wall_fort_life",
+            "per_level": 0.1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "machinery": {
+      "name": "Machinery",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 9,
+          "building_requirements": {},
+          "technology_requirements": {
+            "metal_casting": 4
+          },
+          "cost": {
+            "lumber": 600,
+            "stone": 700,
+            "iron": 800
+          },
+          "gold": 5500,
+          "seconds": 2400,
+          "effect": {
+            "type": "fort_repair_multiple",
+            "per_level": 1,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 9,
+          "building_requirements": {},
+          "technology_requirements": {
+            "metal_casting": 4
+          },
+          "cost": {
+            "lumber": 1200,
+            "stone": 1400,
+            "iron": 1600
+          },
+          "gold": 11000,
+          "seconds": 4800,
+          "effect": {
+            "type": "fort_repair_multiple",
+            "per_level": 1,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 9,
+          "building_requirements": {},
+          "technology_requirements": {
+            "metal_casting": 4
+          },
+          "cost": {
+            "lumber": 2400,
+            "stone": 2800,
+            "iron": 3200
+          },
+          "gold": 22000,
+          "seconds": 9600,
+          "effect": {
+            "type": "fort_repair_multiple",
+            "per_level": 1,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 9,
+          "building_requirements": {},
+          "technology_requirements": {
+            "metal_casting": 4
+          },
+          "cost": {
+            "lumber": 4800,
+            "stone": 5600,
+            "iron": 6400
+          },
+          "gold": 44000,
+          "seconds": 19200,
+          "effect": {
+            "type": "fort_repair_multiple",
+            "per_level": 1,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 9,
+          "building_requirements": {},
+          "technology_requirements": {
+            "metal_casting": 4
+          },
+          "cost": {
+            "lumber": 9600,
+            "stone": 11200,
+            "iron": 12800
+          },
+          "gold": 88000,
+          "seconds": 38400,
+          "effect": {
+            "type": "fort_repair_multiple",
+            "per_level": 1,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 9,
+          "building_requirements": {},
+          "technology_requirements": {
+            "metal_casting": 4
+          },
+          "cost": {
+            "lumber": 19200,
+            "stone": 22400,
+            "iron": 25600
+          },
+          "gold": 176000,
+          "seconds": 76800,
+          "effect": {
+            "type": "fort_repair_multiple",
+            "per_level": 1,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 9,
+          "building_requirements": {},
+          "technology_requirements": {
+            "metal_casting": 4
+          },
+          "cost": {
+            "lumber": 38400,
+            "stone": 44800,
+            "iron": 51200
+          },
+          "gold": 352000,
+          "seconds": 153600,
+          "effect": {
+            "type": "fort_repair_multiple",
+            "per_level": 1,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 9,
+          "building_requirements": {},
+          "technology_requirements": {
+            "metal_casting": 4
+          },
+          "cost": {
+            "lumber": 76800,
+            "stone": 89600,
+            "iron": 102400
+          },
+          "gold": 704000,
+          "seconds": 307200,
+          "effect": {
+            "type": "fort_repair_multiple",
+            "per_level": 1,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 9,
+          "building_requirements": {},
+          "technology_requirements": {
+            "metal_casting": 4
+          },
+          "cost": {
+            "lumber": 153600,
+            "stone": 179200,
+            "iron": 204800
+          },
+          "gold": 1408000,
+          "seconds": 614400,
+          "effect": {
+            "type": "fort_repair_multiple",
+            "per_level": 1,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 9,
+          "building_requirements": {},
+          "technology_requirements": {
+            "metal_casting": 4
+          },
+          "cost": {
+            "lumber": 307200,
+            "stone": 358400,
+            "iron": 409600
+          },
+          "gold": 2816000,
+          "seconds": 1228800,
+          "effect": {
+            "type": "fort_repair_multiple",
+            "per_level": 1,
+            "level": 10
+          }
+        }
+      }
+    },
+    "privateering": {
+      "name": "Privateering",
+      "max_level": 10,
+      "levels": {
+        "1": {
+          "academy_level": 10,
+          "building_requirements": {},
+          "technology_requirements": {
+            "informatics": 5,
+            "military_science": 8
+          },
+          "cost": {
+            "food": 500,
+            "iron": 2000
+          },
+          "gold": 10000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "warehouse_penetration",
+            "per_level": 0.03,
+            "level": 1
+          }
+        },
+        "2": {
+          "academy_level": 10,
+          "building_requirements": {},
+          "technology_requirements": {
+            "informatics": 5,
+            "military_science": 8
+          },
+          "cost": {
+            "food": 1000,
+            "iron": 4000
+          },
+          "gold": 20000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "warehouse_penetration",
+            "per_level": 0.03,
+            "level": 2
+          }
+        },
+        "3": {
+          "academy_level": 10,
+          "building_requirements": {},
+          "technology_requirements": {
+            "informatics": 5,
+            "military_science": 8
+          },
+          "cost": {
+            "food": 2000,
+            "iron": 8000
+          },
+          "gold": 40000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "warehouse_penetration",
+            "per_level": 0.03,
+            "level": 3
+          }
+        },
+        "4": {
+          "academy_level": 10,
+          "building_requirements": {},
+          "technology_requirements": {
+            "informatics": 5,
+            "military_science": 8
+          },
+          "cost": {
+            "food": 4000,
+            "iron": 16000
+          },
+          "gold": 80000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "warehouse_penetration",
+            "per_level": 0.03,
+            "level": 4
+          }
+        },
+        "5": {
+          "academy_level": 10,
+          "building_requirements": {},
+          "technology_requirements": {
+            "informatics": 5,
+            "military_science": 8
+          },
+          "cost": {
+            "food": 8000,
+            "iron": 32000
+          },
+          "gold": 160000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "warehouse_penetration",
+            "per_level": 0.03,
+            "level": 5
+          }
+        },
+        "6": {
+          "academy_level": 10,
+          "building_requirements": {},
+          "technology_requirements": {
+            "informatics": 5,
+            "military_science": 8
+          },
+          "cost": {
+            "food": 16000,
+            "iron": 64000
+          },
+          "gold": 320000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "warehouse_penetration",
+            "per_level": 0.03,
+            "level": 6
+          }
+        },
+        "7": {
+          "academy_level": 10,
+          "building_requirements": {},
+          "technology_requirements": {
+            "informatics": 5,
+            "military_science": 8
+          },
+          "cost": {
+            "food": 32000,
+            "iron": 128000
+          },
+          "gold": 640000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "warehouse_penetration",
+            "per_level": 0.03,
+            "level": 7
+          }
+        },
+        "8": {
+          "academy_level": 10,
+          "building_requirements": {},
+          "technology_requirements": {
+            "informatics": 5,
+            "military_science": 8
+          },
+          "cost": {
+            "food": 64000,
+            "iron": 256000
+          },
+          "gold": 1280000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "warehouse_penetration",
+            "per_level": 0.03,
+            "level": 8
+          }
+        },
+        "9": {
+          "academy_level": 10,
+          "building_requirements": {},
+          "technology_requirements": {
+            "informatics": 5,
+            "military_science": 8
+          },
+          "cost": {
+            "food": 128000,
+            "iron": 512000
+          },
+          "gold": 2560000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "warehouse_penetration",
+            "per_level": 0.03,
+            "level": 9
+          }
+        },
+        "10": {
+          "academy_level": 10,
+          "building_requirements": {},
+          "technology_requirements": {
+            "informatics": 5,
+            "military_science": 8
+          },
+          "cost": {
+            "food": 256000,
+            "iron": 1024000
+          },
+          "gold": 5120000,
+          "seconds": "HISTORICAL_VALUE_UNKNOWN",
+          "effect": {
+            "type": "warehouse_penetration",
+            "per_level": 0.03,
+            "level": 10
+          }
+        }
+      }
+    }
+  },
+  "items": {
+    "michelangelos_script": {
+      "name": "Michelangelo's Script",
+      "purpose": "Required for a normal building upgrade to level 10 where documented."
+    },
+    "hero_hunting": {
+      "name": "Hero Hunting",
+      "purpose": "Refreshes recruitment list in Inn.",
+      "effect": "refresh_inn_candidates"
+    }
+  },
+  "quests": {},
+  "titles_ranks": {},
+  "formulas": {
+    "construction_time_modifier": "HISTORICAL_VALUE_UNKNOWN",
+    "demolition_resource_refund": "HISTORICAL_VALUE_UNKNOWN",
+    "resource_production": "HISTORICAL_VALUE_UNKNOWN",
+    "resource_capacity": "HISTORICAL_VALUE_UNKNOWN",
+    "population": "HISTORICAL_VALUE_UNKNOWN",
+    "tax": "HISTORICAL_VALUE_UNKNOWN",
+    "loyalty": "HISTORICAL_VALUE_UNKNOWN",
+    "grievance_public_sentiment": "HISTORICAL_VALUE_UNKNOWN",
+    "prestige": "HISTORICAL_VALUE_UNKNOWN",
+    "honor": "HISTORICAL_VALUE_UNKNOWN",
+    "combat": "HISTORICAL_VALUE_UNKNOWN",
+    "warehouse_capacity": "sum(completed warehouse base capacities) * (1 + 0.10 * Stockpile level)",
+    "warehouse_protection": "allocated share of effective warehouse capacity; food/lumber/stone/iron only; gold never protected",
+    "privateering": "effective protected amount = allocated protected amount * (1 - 0.03 * attacker Privateering level)"
+  },
+  "town_hall_levels": {
+    "1": {
+      "resource_fields": 10,
+      "valley_limit": 1,
+      "cost": {},
+      "seconds": 0,
+      "prerequisites": []
+    },
+    "2": {
+      "resource_fields": 13,
+      "valley_limit": 2,
+      "cost": {
+        "food": 400,
+        "lumber": 6000,
+        "stone": 5000,
+        "iron": 200
+      },
+      "seconds": 1800,
+      "prerequisites": []
+    },
+    "3": {
+      "resource_fields": 16,
+      "valley_limit": 3,
+      "cost": {
+        "food": 800,
+        "lumber": 12000,
+        "stone": 10000,
+        "iron": 500
+      },
+      "seconds": 3600,
+      "prerequisites": [
+        {
+          "building": "walls",
+          "level": 1
+        }
+      ]
+    },
+    "4": {
+      "resource_fields": 19,
+      "valley_limit": 4,
+      "cost": {
+        "food": 1600,
+        "lumber": 24000,
+        "stone": 20000,
+        "iron": 800
+      },
+      "seconds": 7200,
+      "prerequisites": [
+        {
+          "building": "walls",
+          "level": 2
+        }
+      ]
+    },
+    "5": {
+      "resource_fields": 22,
+      "valley_limit": 5,
+      "cost": {
+        "food": 3200,
+        "lumber": 48000,
+        "stone": 40000,
+        "iron": 1600
+      },
+      "seconds": 14400,
+      "prerequisites": [
+        {
+          "building": "walls",
+          "level": 3
+        }
+      ]
+    },
+    "6": {
+      "resource_fields": 25,
+      "valley_limit": 6,
+      "cost": {
+        "food": 6400,
+        "lumber": 96000,
+        "stone": 80000,
+        "iron": 3200
+      },
+      "seconds": 28800,
+      "prerequisites": [
+        {
+          "building": "walls",
+          "level": 4
+        }
+      ]
+    },
+    "7": {
+      "resource_fields": 28,
+      "valley_limit": 7,
+      "cost": {
+        "food": 12800,
+        "lumber": 192000,
+        "stone": 160000,
+        "iron": 6400
+      },
+      "seconds": 57600,
+      "prerequisites": [
+        {
+          "building": "walls",
+          "level": 5
+        }
+      ]
+    },
+    "8": {
+      "resource_fields": 31,
+      "valley_limit": 8,
+      "cost": {
+        "food": 25600,
+        "lumber": 384000,
+        "stone": 320000,
+        "iron": 12800
+      },
+      "seconds": 115200,
+      "prerequisites": [
+        {
+          "building": "walls",
+          "level": 6
+        }
+      ]
+    },
+    "9": {
+      "resource_fields": 34,
+      "valley_limit": 9,
+      "cost": {
+        "food": 51200,
+        "lumber": 768000,
+        "stone": 640000,
+        "iron": 25600
+      },
+      "seconds": 230400,
+      "prerequisites": [
+        {
+          "building": "walls",
+          "level": 7
+        }
+      ]
+    },
+    "10": {
+      "resource_fields": 37,
+      "valley_limit": 10,
+      "cost": {
+        "food": 102400,
+        "lumber": 1536000,
+        "stone": 1280000,
+        "iron": 51200
+      },
+      "seconds": 460800,
+      "prerequisites": [
+        {
+          "building": "walls",
+          "level": 8
+        }
+      ],
+      "item_cost": {
+        "michelangelos_script": 1
+      }
+    }
+  },
+  "town_hall": {
+    "permanent_dedicated": true,
+    "max_normal_level": 10,
+    "resource_field_progression_rule": "10 + 3 * (town_hall_level - 1)",
+    "administration": [
+      "production",
+      "tax_rate",
+      "comforting",
+      "levy",
+      "rename_city"
+    ],
+    "comforting_exact_rules": "HISTORICAL_VALUE_UNKNOWN",
+    "levy_exact_rules": "HISTORICAL_VALUE_UNKNOWN",
+    "tax_gold_formula": "HISTORICAL_VALUE_UNKNOWN",
+    "population_tick_formula": "HISTORICAL_VALUE_UNKNOWN",
+    "loyalty_grievance_tick_formula": "HISTORICAL_VALUE_UNKNOWN"
+  },
+  "hero_recruitment": {
+    "candidate_count": "Inn level",
+    "automatic_refresh_seconds": 3600,
+    "hire_gold_per_hero_level": 1000,
+    "salary_gold_per_hour_per_hero_level": 20,
+    "initial_inn_loyalty": 70,
+    "candidate_generation_formula": "HISTORICAL_VALUE_UNKNOWN",
+    "replacement_after_hire": "immediate",
+    "feasting_hall_capacity": "Feasting Hall level"
+  },
+  "embassy_rules": {
+    "join_min_level": 1,
+    "create_alliance_min_level": 2,
+    "garrison_waves_per_level": 1,
+    "alliance_member_limit_per_host_embassy_level": 10,
+    "foreign_garrison_defense_only": true,
+    "host_feeds_garrison": true
+  },
+  "marketplace_rules": {
+    "resources": [
+      "food",
+      "lumber",
+      "stone",
+      "iron"
+    ],
+    "max_transaction_quantity": 10000000,
+    "fee_rate": 0.005,
+    "concurrent_transactions_per_level": 1,
+    "order_book": "PLAYER_TO_PLAYER",
+    "unfilled_assets_plunderable": true,
+    "delivery_time_formula": "Matched purchases arrive after 30 minutes; sales credit gold immediately."
+  },
+  "rally_spot_rules": {
+    "missions": [
+      "ATTACK",
+      "SCOUT",
+      "REINFORCE",
+      "TRANSPORT"
+    ],
+    "march_slots_per_level": 1,
+    "troop_limit_per_level": 10000,
+    "war_ensign_capacity_multiplier": 1.25,
+    "attack_requires_hero": true,
+    "camp_time_max_seconds": 86340,
+    "exercise_uses_players_research_for_both_sides": true,
+    "medic_camp": true,
+    "travel_distance": "euclidean coordinate distance",
+    "travel_time": "slowest unit: distance*1000/effective_speed minutes",
+    "deployment_food": "sum troop hourly food * outbound travel hours; exact legacy rounding isolated in service"
+  },
+  "fortifications": {
+    "trap": {
+      "name": "Trap",
+      "wall_level": 1,
+      "technology_requirements": {},
+      "space": 1,
+      "cost": {
+        "food": 50,
+        "lumber": 500,
+        "stone": 100,
+        "iron": 50
+      },
+      "base_seconds": 60,
+      "range": 5000,
+      "attack_effect": "ONE_USE_ELIGIBLE_CASUALTY",
+      "targets": [
+        "worker",
+        "warrior",
+        "scout",
+        "pikeman",
+        "swordsman",
+        "archer",
+        "transporter"
+      ],
+      "one_shot": true,
+      "life": "ONE_USE",
+      "defense": 0
+    },
+    "abatis": {
+      "name": "Abatis",
+      "wall_level": 2,
+      "technology_requirements": {
+        "metal_casting": 1
+      },
+      "space": 2,
+      "cost": {
+        "food": 100,
+        "lumber": 1200,
+        "stone": 0,
+        "iron": 150
+      },
+      "base_seconds": 120,
+      "range": 5000,
+      "targets": [
+        "cavalry",
+        "cataphract"
+      ],
+      "attack_effect": "ONE_USE_ELIGIBLE_CASUALTY",
+      "one_shot": true,
+      "life": "ONE_USE",
+      "defense": 0
+    },
+    "archer_tower": {
+      "name": "Archer's Tower",
+      "wall_level": 3,
+      "technology_requirements": {
+        "archery": 3
+      },
+      "space": 3,
+      "cost": {
+        "food": 200,
+        "lumber": 2000,
+        "stone": 1000,
+        "iron": 500
+      },
+      "base_seconds": 180,
+      "life": 2000,
+      "attack": 300,
+      "defense": 360,
+      "base_range": 1300,
+      "range_formula": "1300 * (1 + 0.05 * (Walls level + Archery level))",
+      "construction_cost_source_conflict": {
+        "stone": 1000,
+        "alternate_surviving_table": 1500
+      }
+    },
+    "rolling_log": {
+      "name": "Rolling Log",
+      "wall_level": 5,
+      "technology_requirements": {
+        "metal_casting": 5
+      },
+      "space": 4,
+      "cost": {
+        "food": 300,
+        "lumber": 6000,
+        "stone": 0,
+        "iron": 0
+      },
+      "base_seconds": 360,
+      "attack": 500,
+      "range": 1300,
+      "one_shot": true,
+      "life": "ONE_USE",
+      "defense": 0,
+      "targets": "attacking units"
+    },
+    "defensive_trebuchet": {
+      "name": "Defensive Trebuchet",
+      "wall_level": 7,
+      "technology_requirements": {
+        "metal_casting": 6
+      },
+      "space": 5,
+      "cost": {
+        "food": 600,
+        "lumber": 0,
+        "stone": 8000,
+        "iron": 0
+      },
+      "base_seconds": 600,
+      "attack": 800,
+      "range": 5000,
+      "one_shot": true,
+      "life": "ONE_USE",
+      "defense": 0,
+      "targets": [
+        "ballista",
+        "battering_ram",
+        "catapult"
+      ],
+      "politics_exponent_divisor": 4
+    }
+  },
+  "demolition_rules": {
+    "labor_one_level": true,
+    "labor_refund_rate": 0.3,
+    "labor_time": "same base time as constructing the level being removed, modified by current Construction/Mayor Politics",
+    "dynamite_item": "dynamite",
+    "dynamite_immediate": true,
+    "dynamite_refund_rate": 0,
+    "town_hall_demolishable": false,
+    "walls_complete_dynamite": "HISTORICAL_VALUE_UNKNOWN"
+  },
+  "resource_production": {
+    "technology_by_resource": {
+      "food": "agriculture",
+      "lumber": "lumbering",
+      "stone": "masonry",
+      "iron": "mining"
+    },
+    "technology_bonus_per_level_percent": 10,
+    "mayor_politics_bonus_per_point_percent": 1,
+    "production_percentage_min": 0,
+    "production_percentage_max": 100,
+    "labor_scales_with_production_percentage": true,
+    "population_shortage": "assigned resource labor is deducted from idle population; Age I sources document negative available/idle population, so production is not silently scaled by an invented shortage formula",
+    "production_items": {
+      "food": {
+        "plowshares": {
+          "percent": 25,
+          "seconds": 86400
+        },
+        "iron_rake": {
+          "percent": 25,
+          "seconds": 604800
+        }
+      },
+      "lumber": {
+        "arch_saw": {
+          "percent": 25,
+          "seconds": 86400
+        },
+        "double_saw": {
+          "percent": 25,
+          "seconds": 604800
+        }
+      },
+      "stone": {
+        "quarrying_tools": {
+          "percent": 25,
+          "seconds": 86400
+        },
+        "adv_quarrying_tools": {
+          "percent": 25,
+          "seconds": 604800
+        }
+      },
+      "iron": {
+        "blower": {
+          "percent": 25,
+          "seconds": 86400
+        },
+        "blast_furnace": {
+          "percent": 25,
+          "seconds": 604800
+        }
+      }
+    },
+    "valley_bonus_table": {
+      "grassland": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "swamp": [
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "lake": [
+        8,
+        11,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        32,
+        35
+      ],
+      "hill": [
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "desert": [
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "forest": [
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ]
+    }
+  }
+}

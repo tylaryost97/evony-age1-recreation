@@ -1,0 +1,294 @@
+{
+  "ranks": [
+    {
+      "key": "Civilian",
+      "order": 0
+    },
+    {
+      "key": "Lieutenant",
+      "order": 1,
+      "requirements": {
+        "gold": 10000,
+        "town_hall": 2
+      },
+      "rewards": {
+        "prestige": 100,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Captain",
+      "order": 2,
+      "requirements": {
+        "gold": 20000,
+        "town_hall": 4,
+        "medals": {
+          "cross_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 200,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Major",
+      "order": 3,
+      "requirements": {
+        "gold": 30000,
+        "town_hall": 6,
+        "medals": {
+          "rose_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 300,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Colonel",
+      "order": 4,
+      "requirements": {
+        "gold": 40000,
+        "town_hall": 8,
+        "medals": {
+          "lion_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 400,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "General",
+      "order": 5,
+      "requirements": {
+        "gold": 50000,
+        "town_hall": 10,
+        "medals": {
+          "honor_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 500,
+        "items": {
+          "beginner_guidelines": 2,
+          "primary_guidelines": 2
+        }
+      }
+    }
+  ],
+  "titles": [
+    {
+      "key": "Civilian",
+      "order": 0,
+      "city_limit": 1
+    },
+    {
+      "key": "Knight",
+      "order": 1,
+      "city_limit": 2,
+      "requirements": {
+        "rank": "Lieutenant",
+        "gold": 20000,
+        "prestige": 1000,
+        "medals": {
+          "cross_medal": 10,
+          "rose_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 100,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Baronet",
+      "order": 2,
+      "city_limit": 3,
+      "requirements": {
+        "rank": "Captain",
+        "gold": 40000,
+        "prestige": 2000,
+        "medals": {
+          "rose_medal": 10,
+          "lion_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 200,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Baron",
+      "order": 3,
+      "city_limit": 4,
+      "requirements": {
+        "rank": "Major",
+        "gold": 60000,
+        "prestige": 4000,
+        "medals": {
+          "lion_medal": 10,
+          "honor_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 600,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Viscount",
+      "order": 4,
+      "city_limit": 5,
+      "requirements": {
+        "rank": "Colonel",
+        "gold": 80000,
+        "prestige": 8000,
+        "medals": {
+          "honor_medal": 10,
+          "courage_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 800,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Earl",
+      "order": 5,
+      "city_limit": 6,
+      "requirements": {
+        "rank": "General",
+        "gold": 100000,
+        "prestige": 16000,
+        "medals": {
+          "courage_medal": 10,
+          "wisdom_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 1000,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Marquis",
+      "order": 6,
+      "city_limit": 7,
+      "requirements": {
+        "rank": "General",
+        "gold": 200000,
+        "prestige": 32000,
+        "medals": {
+          "wisdom_medal": 10,
+          "freedom_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 2000,
+        "items": {
+          "intermediate_guidelines": 1,
+          "senior_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Duke",
+      "order": 7,
+      "city_limit": 8,
+      "requirements": {
+        "rank": "General",
+        "gold": 300000,
+        "prestige": 64000,
+        "medals": {
+          "freedom_medal": 10,
+          "justice_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 1400,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Furstin",
+      "order": 8,
+      "city_limit": 9,
+      "requirements": {
+        "rank": "General",
+        "gold": 400000,
+        "prestige": 128000,
+        "medals": {
+          "justice_medal": 10,
+          "nation_medal": 5
+        }
+      },
+      "rewards": {
+        "prestige": 1600,
+        "items": {
+          "beginner_guidelines": 1,
+          "primary_guidelines": 1
+        }
+      }
+    },
+    {
+      "key": "Prinzessin",
+      "order": 9,
+      "city_limit": 10,
+      "requirements": {
+        "rank": "General",
+        "gold": 500000,
+        "prestige": 256000,
+        "medals": {
+          "justice_medal": 30,
+          "nation_medal": 15
+        }
+      },
+      "rewards": {
+        "prestige": 5000,
+        "items": {
+          "intermediate_guidelines": 1,
+          "senior_guidelines": 1
+        }
+      }
+    }
+  ],
+  "honor": {
+    "note": "PvP battle-derived relative combat performance; exact formula remains HISTORICAL_VALUE_UNKNOWN until separately verified."
+  }
+}
